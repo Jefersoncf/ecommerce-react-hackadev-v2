@@ -1,39 +1,61 @@
-import '../styles/productList'
-
-const ProductList = () => {
-    return(
-        <section className="section all-products" id="products">
-            <div className="top container">
-                <h1>Todos os Produtos</h1>
-                <form>
-                <select>
-                    <option value="1">Ordenar por</option>
-                    <option value="2">Gênero</option>
-                    <option value="3">Preço</option>
-                    <option value="4">Marca</option>
-                    <option value="5">Oferta</option>
-                </select>
-                <span><i className="bx bx-chevron-down"></i></span>
-                </form>
+import '../styles/product-list.css';
+const ProductList = ({ products, addToCart }) => {
+  return (
+    <section className="section all-products" id="products">
+      <div className="top container">
+        <h1>Todos os Produtos</h1>
+        <form>
+          <select>
+            <option value="1">Defualt Sorting</option>
+            <option value="2">Sort By Price</option>
+            <option value="3">Sort By Popularity</option>
+            <option value="4">Sort By Sale</option>
+            <option value="5">Sort By Rating</option>
+          </select>
+          <span>
+            <i className="bx bx-chevron-down"></i>
+          </span>
+        </form>
+      </div>
+      <div className="product-center container">
+        {products.map((product) => (
+          <div className="product-item">
+            <div className="overlay">
+              <a href="/" className="product-thumb">
+                <img
+                  src={`images/${product.image}.png`}
+                  alt="Imagem do produto"
+                />
+              </a>
+              <span className="discount">40%</span>
             </div>
-            <div className="product-center container">
-                <div className="product-item">
-                <div className="overlay">
-                    <a href="productDetails.html" className="product-thumb">
-                    <img src="./src/img/product1.png" alt="" />
-                    </a>
-                    <span className="discount">-40%</span>
-                </div>
-                <div className="product-info">
-                    <span>FEMININO</span>
-                    <a href="productDetails.html">Vestido Floral Verde Marinho</a>
-                    <p className="priceB4">R$ 250</p>
-                    <h4>R$ 150</h4>
-                </div>
-                </div>
+            <div className="product-info">
+              <div className="product-stars">
+                <i className="bx bx-star"></i>
+                <span>{product.category}</span>
+              </div>
+              <a href="/">{product.name}</a>
+              <h4>R$ {product.price}</h4>
             </div>
-        </section>
-    )
-}
+            <ul className="icons">
+              <li>
+                <i className="bx bx-heart"></i>
+              </li>
+              <li>
+                <i className="bx bx-search"></i>
+              </li>
+              <li>
+                <i
+                  className="bx bx-cart"
+                  onClick={() => addToCart(product)}
+                ></i>
+              </li>
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
 
 export default ProductList;
