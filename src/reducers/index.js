@@ -1,105 +1,105 @@
-import { ADD_TO_CART } from "../actions";
+import { ADD_TO_CART } from '../actions';
 
 const initialStateProducts = {
   products: [
     {
       id: 1,
-      name: "VESTIDO COM MANGAS BUFANTES",
-      category: "ROUPAS",
+      name: 'VESTIDO COM MANGAS BUFANTES',
+      category: 'ROUPAS',
       rating: 4,
-      colors: "floral/preto",
+      colors: 'floral/preto',
       price: 249.0,
-      size: "M",
+      size: 'M',
       percent: 0,
-      image: "product1",
+      image: 'product1',
     },
     {
       id: 2,
-      name: "MOLETOM FORRADO",
-      category: "ROUPAS",
+      name: 'MOLETOM FORRADO',
+      category: 'ROUPAS',
       rating: 4,
-      colors: "branco/azul marinho",
-      size: "G",
+      colors: 'branco/azul marinho',
+      size: 'G',
       price: 518.7,
       percent: 50,
-      image: "product2",
+      image: 'product2',
     },
     {
       id: 3,
-      name: "BOLSA COM ZIPPER",
-      category: "ACESSÓRIOS",
+      name: 'BOLSA COM ZIPPER',
+      category: 'ACESSÓRIOS',
       rating: 4,
-      colors: "vermelha/preta",
-      size: "",
+      colors: 'vermelha/preta',
+      size: '',
       price: 220.0,
       percent: 0,
-      image: "product3",
+      image: 'product3',
     },
     {
       id: 4,
-      name: "CAMISA ARAMIS",
-      category: "ROUPAS",
+      name: 'CAMISA ARAMIS',
+      category: 'ROUPAS',
       rating: 4,
-      colors: "branca/vermelha/preta",
-      size: "M",
+      colors: 'branca/vermelha/preta',
+      size: 'M',
       price: 199.9,
       percent: 50,
-      image: "product4",
+      image: 'product4',
     },
     {
       id: 5,
-      name: "MOLETOM COM CAPUZ",
-      category: "ROUPAS",
+      name: 'MOLETOM COM CAPUZ',
+      category: 'ROUPAS',
       rating: 4,
-      colors: "preto",
-      size: "G",
+      colors: 'preto',
+      size: 'G',
       price: 255.8,
       percent: 0,
-      image: "product5",
+      image: 'product5',
     },
     {
       id: 6,
-      name: "TÊNIS FEMININO HRX",
-      category: "CALÇADOS",
+      name: 'TÊNIS FEMININO HRX',
+      category: 'CALÇADOS',
       rating: 4,
-      colors: "cinza grafite/azul marinho",
+      colors: 'cinza grafite/azul marinho',
       price: 520.5,
-      size: "",
+      size: '',
       percent: 0,
-      image: "product6",
+      image: 'product6',
     },
     {
       id: 7,
-      name: "VESTIDO TRANSPASSE",
-      category: "ROUPAS",
+      name: 'VESTIDO TRANSPASSE',
+      category: 'ROUPAS',
       rating: 4,
-      colors: "rosa chiclete",
+      colors: 'rosa chiclete',
       price: 258.9,
-      size: "S",
+      size: 'S',
       percent: 50,
-      image: "product7",
+      image: 'product7',
     },
     {
       id: 8,
-      name: "TÊNIS MASCULINO SPORT",
-      category: "CALÇADOS",
+      name: 'TÊNIS MASCULINO SPORT',
+      category: 'CALÇADOS',
       rating: 4,
-      colors: "preto/cinza",
+      colors: 'preto/cinza',
       price: 599.9,
-      size: "",
+      size: '',
       percent: 0,
-      image: "product8",
+      image: 'product8',
     },
     {
       id: 9,
-      name: "TÊNIS MASCULINO SPORT",
-      category: "CALÇADOS",
+      name: 'TÊNIS MASCULINO SPORT',
+      category: 'CALÇADOS',
       rating: 4,
-      colors: "preto/cinza",
+      colors: 'preto/cinza',
       price: 599.9,
-      size: "",
+      size: '',
       percent: 0,
-      image: "product9",
+      image: 'product9',
     },
   ],
 };
@@ -113,16 +113,18 @@ const productReducer = (state = initialStateProducts, action) => {
 
 const cartReducer = (state = initialStateCart, action) => {
   switch (action.type) {
-    case ADD_TO_CART: 
-    if (state.items.find((item) => item.id = action.payload.id)) {
-      return state
-    } 
-    return {...state, items: [...state.items,{...action.payload, quantity: 1}]}      
-  
+    case ADD_TO_CART:
+      if (state.items.find((item) => (item.id = action.payload.id))) {
+        return state;
+      }
+      return {
+        ...state,
+        items: [...state.items, { ...action.payload, quantity: 1 }],
+      };
+
     default:
-      break;
+      return state;
   }
-  return state;
 };
 
 export { productReducer, cartReducer };

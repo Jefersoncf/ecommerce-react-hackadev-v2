@@ -1,21 +1,20 @@
 import '../styles/navbar.css';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const NavBar = ({cartCount
-}) => {
+const NavBar = ({ cartCount }) => {
   return (
     <nav>
       <div className="navigation">
         <div className="nav-center container d-flex">
-          {/* <Link to="/" className="logo">
+          <Link to="/" className="logo">
             <h1>DevModas</h1>
-          </Link> */}
+          </Link>
 
           <ul className="nav-list d-flex">
             <li className="nav-item">
-              {/* <Link to="/" className="nav-link">
+              <Link to="/" className="nav-link">
                 Home
-              </Link> */}
+              </Link>
             </li>
             <li className="nav-item">
               <a href="product.html" className="nav-link">
@@ -48,10 +47,10 @@ const NavBar = ({cartCount
               <i className="bx bx-heart"></i>
               <span className="d-flex">0</span>
             </div>
-            <a href="/cart" className="icon">
+            <Link to="/cart" className="icon">
               <i className="bx bx-cart"></i>
               <span className="d-flex"> {cartCount}</span>
-            </a>
+            </Link>
           </div>
 
           <div className="hamburger">
