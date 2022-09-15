@@ -5,13 +5,14 @@ import App from './App';
 // import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import { productReducer } from './reducers/index';
+import { cartReducer, productReducer } from './reducers/index';
 
 // import Home from './pages/Home';
 
 const store = configureStore({
   reducer: {
     product: productReducer,
+    cart: cartReducer,
   },
 });
 

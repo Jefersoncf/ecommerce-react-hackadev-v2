@@ -1,9 +1,10 @@
 :root {
-    --white: #fff;
-    --black-b: #222;
-    --black-p: #030508;
-    --grey2: #e9d7d3;
-  }
+  --white: #fff;
+  --black: #222;
+  --green: #6cbe02;
+  --grey1: #f0f0f0;
+  --grey2: #e9d7d3;
+}
   
   *,
   *::before,

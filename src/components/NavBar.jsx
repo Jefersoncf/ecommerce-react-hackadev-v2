@@ -1,7 +1,8 @@
 import '../styles/navbar.css';
 // import { Link } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = ({cartCount
+}) => {
   return (
     <nav>
       <div className="navigation">
@@ -47,10 +48,10 @@ const NavBar = () => {
               <i className="bx bx-heart"></i>
               <span className="d-flex">0</span>
             </div>
-            {/* <Link to="/cart" className="icon">
+            <a href="/cart" className="icon">
               <i className="bx bx-cart"></i>
-              <span className="d-flex">0</span>
-            </Link> */}
+              <span className="d-flex"> {cartCount}</span>
+            </a>
           </div>
 
           <div className="hamburger">
