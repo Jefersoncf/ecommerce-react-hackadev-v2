@@ -14,7 +14,7 @@ const Home = () => {
   };
   return (
     <>
-      <NavBar cartCount={cartItems}></NavBar>
+      <NavBar cartCount={cartItems.length}></NavBar>
       <ProductList products={products} addToCart={addToCart}></ProductList>
       <Footer></Footer>
     </>

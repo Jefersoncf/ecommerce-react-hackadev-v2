@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
+import Cart from '../components/Cart';
 import { CHANGE_ORDER_CART, CHANGE_QUANTITY } from '../actions';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,8 +23,11 @@ const CartPage = () => {
   };
   return (
     <>
-      <NavBar></NavBar>
+      <NavBar cartCount={cartItems.length}></NavBar>
+      <Cart items={cartItems} order={order} 
+      changeQuantity={changeQuantity}></Cart>
       <Footer></Footer>
+      
     </>
   );
 };
