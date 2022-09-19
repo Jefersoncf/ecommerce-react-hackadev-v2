@@ -31,9 +31,10 @@ td input {
   padding: 0.5rem;
 }
 
-td a {
+td .btn-remove {
   color: orangered;
   font-size: 1.4rem;
+  cursor: pointer;
 }
 
 td img {

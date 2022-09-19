@@ -1,4 +1,10 @@
-import { ADD_TO_CART, CHANGE_ORDER_CART, CHANGE_QUANTITY } from '../actions';
+import {
+  ADD_TO_CART,
+  CHANGE_ORDER_CART,
+  CHANGE_QUANTITY,
+  EMPTY_CART,
+  REMOVE_ITEM,
+} from '../actions';
 
 const initialStateProducts = {
   products: [
@@ -113,8 +119,8 @@ const initialStateOrder = {
   discount_in_percent: 10,
   shipping_address: '',
   total_items: 0,
-  total_cost: 0
-}
+  total_cost: 0,
+};
 
 const productReducer = (state = initialStateProducts, action) => {
   return state;
@@ -128,17 +134,24 @@ const cartReducer = (state = initialStateCart, action) => {
       }
       return {
         ...state,
-        items: [...state.items, {...action.payload, quantity: 1 }],
+        items: [...state.items, { ...action.payload, quantity: 1 }],
       };
 
-    case CHANGE_QUANTITY: 
+    case CHANGE_QUANTITY:
       const oldItem = state.items.find((item) => item.id === action.payload.id);
 
       const index = state.items.indexOf(oldItem);
       const newItems = [...state.items];
-      newItems[index] = action.payload
-      return {...state, items: newItems}
-
+      newItems[index] = action.payload;
+      return { ...state, items: newItems };
+    case REMOVE_ITEM:
+      const item = action.payload;
+      const i = state.items.findIndex((it) => it._id === item._id);
+      const itemsArray = [...state.items];
+      itemsArray.splice(i, 1);
+      return { ...state, items: itemsArray };
+    case EMPTY_CART:
+      return { ...state, items: [] };
     default:
       return state;
   }
@@ -146,15 +159,21 @@ const cartReducer = (state = initialStateCart, action) => {
 
 const orderReducer = (state = initialStateOrder, action) => {
   switch (action.type) {
-    case CHANGE_ORDER_CART: 
-    const items = action.payload;
-    const total_items = items.reduce((total, item) => total + item.quantity * 1, 0);
-  
-  const total_cost = items.reduce((total, item) => total + item.price * item.quantity, 0)
-  
-  return {...state, items: action.payload, total_items, total_cost}
-  default: 
-    return state;
-}
-}
+    case CHANGE_ORDER_CART:
+      const items = action.payload;
+      const total_items = items.reduce(
+        (total, item) => total + item.quantity * 1,
+        0
+      );
+
+      const total_cost = items.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0
+      );
+
+      return { ...state, items: action.payload, total_items, total_cost };
+    default:
+      return state;
+  }
+};
 export { productReducer, cartReducer, orderReducer };
