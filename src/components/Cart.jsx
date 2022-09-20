@@ -1,15 +1,18 @@
-import '../styles/cart.css';
-import { Link } from 'react-router-dom';
+import "../styles/cart.css";
+import { Link } from "react-router-dom";
 
 const Cart = ({ items, order, changeQuantity, removeItem }) => {
   return (
     <div className="container cart">
       <table>
-        <tr>
-          <th>Produtos</th>
-          <th>Quantidade</th>
-          <th>Subtotal</th>
-        </tr>
+        {order.items.length ? (
+          <tr>
+            <th>Produtos</th>
+            <th>Quantidade</th>
+            <th>Subtotal</th>
+          </tr>
+        ) : null}
+
         {items.map((item) => (
           <tr>
             <td>
@@ -36,36 +39,39 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
           </tr>
         ))}
       </table>
-      <div className="total-price">
-        <table>
-          <tr>
-            <td>Subtotal</td>
-            <td>R$ {order.total_cost.toFixed(2)}</td>
-          </tr>
-          <tr>
-            <td>Disconto ({order.discount_in_percent}%)</td>
-            <td>
-              R${' '}
-              {((order.total_cost * order.discount_in_percent) / 100).toFixed(
-                2
-              )}
-            </td>
-          </tr>
-          <tr>
-            <td>Total</td>
-            <td>
-              R${' '}
-              {(
-                order.total_cost -
-                (order.total_cost * order.discount_in_percent) / 100
-              ).toFixed(2)}
-            </td>
-          </tr>
-        </table>
-        <Link to="/checkout" className="checkout btn">
-          Proceed To Checkout
-        </Link>
-      </div>
+
+      {order.items.length ? (
+        <div className="total-price">
+          <table>
+            <tr>
+              <td>Subtotal</td>
+              <td>R$ {order.total_cost.toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>Disconto ({order.discount_in_percent}%)</td>
+              <td>
+                R${" "}
+                {((order.total_cost * order.discount_in_percent) / 100).toFixed(
+                  2
+                )}
+              </td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td>
+                R${" "}
+                {(
+                  order.total_cost -
+                  (order.total_cost * order.discount_in_percent) / 100
+                ).toFixed(2)}
+              </td>
+            </tr>
+          </table>
+          <Link to="/checkout" className="checkout btn">
+            Proceed To Checkout
+          </Link>
+        </div>
+      ) : null}
     </div>
   );
 };
