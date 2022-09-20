@@ -1,8 +1,10 @@
 import NavBar from '../components/NavBar';
+import Slider from '../components/Slider/Slider'
 import { useDispatch, useSelector } from 'react-redux';
 import ProductList from '../components/ProductList';
 import Footer from '../components/Footer';
 import { ADD_TO_CART } from '../actions';
+
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -14,8 +16,11 @@ const Home = () => {
   };
   return (
     <>
+    
       <NavBar cartCount={cartItems.length}></NavBar>
+      <Slider></Slider>
       <ProductList products={products} addToCart={addToCart}></ProductList>
+      
       <Footer></Footer>
     </>
   );

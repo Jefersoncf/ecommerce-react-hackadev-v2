@@ -29,6 +29,7 @@ const CartPage = () => {
   return (
     <>
       <NavBar cartCount={cartItems.length}></NavBar>
+
       <Cart
         items={cartItems}
         order={order}
