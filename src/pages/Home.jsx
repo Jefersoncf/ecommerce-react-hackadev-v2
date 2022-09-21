@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <>
       <NavBar cartCount={cartItems.length}></NavBar>
-      <Slider></Slider>
+      <Slider />
       <ProductList products={products} addToCart={addToCart}></ProductList>
 
       <Footer></Footer>

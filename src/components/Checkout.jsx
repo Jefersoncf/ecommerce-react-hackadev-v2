@@ -64,7 +64,6 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
                       onClick={(e) => setShipAddress(address)}
                     />
                     Usar este endereço
-                    {/* <label for="address">Usar este endereço</label> */}
                   </div>
                 </div>
               </div>
@@ -84,22 +83,17 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
                   }
                 />
               </div>
-              <div className="flex">
-                <div className="inputBox">
-                  <p>CPF :</p>
-                  <input type="text" placeholder="Ex: 961.619.580-82" />
-                </div>
-                <div className="inputBox">
-                  <p>Telefone :</p>
-                  <input
-                    type="text"
-                    placeholder="Ex: (62) 98765-4326"
-                    value={address.phone}
-                    onChange={(e) =>
-                      setAddress({ ...address, phone: e.target.value })
-                    }
-                  />
-                </div>
+
+              <div className="inputBox tel">
+                <p>Telefone :</p>
+                <input
+                  type="text"
+                  placeholder="Ex: (62) 98765-4326"
+                  value={address.phone}
+                  onChange={(e) =>
+                    setAddress({ ...address, phone: e.target.value })
+                  }
+                />
               </div>
 
               <div className="inputBox">
@@ -140,10 +134,10 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
 
               <div className="flex">
                 <div className="inputBox">
-                  <p>Estado :</p>
+                  <p>UF :</p>
                   <input
                     type="text"
-                    placeholder="Ex: Goiás"
+                    placeholder="Ex: GO"
                     value={address.state}
                     onChange={(e) =>
                       setAddress({ ...address, state: e.target.value })
@@ -176,7 +170,7 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
               <div className="content-cart">
                 <div className="box-cart">
                   <strong> Quantidade de Itens:{order.total_items}</strong>
-                  {/* <hr /> */}
+
                   <p>
                     Valor Bruto
                     {order.total_cost.toLocaleString('pt-br', {
@@ -185,12 +179,11 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
                     })}
                   </p>
 
-                  {/* <hr /> */}
                   <p>
                     Serviços
                     {order.shipping_charge}
                   </p>
-                  {/* <hr /> */}
+
                   <p>
                     Descontos{' '}
                     {(
@@ -201,7 +194,7 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
                       currency: 'BRL',
                     })}
                   </p>
-                  {/* <hr /> */}
+
                   <strong>
                     Total:
                     {total.toLocaleString('pt-br', {

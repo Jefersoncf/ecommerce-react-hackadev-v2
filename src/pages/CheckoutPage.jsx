@@ -1,6 +1,6 @@
 import Navbar from '../components/NavBar';
-import { useDispatch, useSelector } from 'react-redux';
 import Footer from '../components/Footer';
+import { useDispatch, useSelector } from 'react-redux';
 import Checkout from '../components/Checkout';
 
 import {

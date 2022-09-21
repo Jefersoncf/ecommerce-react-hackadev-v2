@@ -1,12 +1,12 @@
 .container-slider {
-  max-width: 900px;
+  max-width: 95%;
   height: 390px;
   margin: 15px auto 20px;
   position: relative;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
   .container-slider {
     margin: 100px 10px 0;
   }
@@ -54,7 +54,6 @@
   right: 3px;
   transform: translateY(-60%);
 }
-
 
 .container-dots {
   position: absolute;
