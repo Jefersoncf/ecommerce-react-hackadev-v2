@@ -6,7 +6,7 @@ const ProductList = ({ products, addToCart }) => {
         <h1>Todos os Produtos</h1>
         <form>
           <select>
-            <option value="1">Defualt Sorting</option>
+            <option value="1">Default Sorting</option>
             <option value="2">Sort By Price</option>
             <option value="3">Sort By Popularity</option>
             <option value="4">Sort By Sale</option>
@@ -15,6 +15,7 @@ const ProductList = ({ products, addToCart }) => {
           <span>
             <i className="bx bx-chevron-down"></i>
           </span>
+          <input type="textarea" placeholder='Search product...'></input>
         </form>
       </div>
       <div className="product-center container">
