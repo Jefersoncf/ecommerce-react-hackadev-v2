@@ -17,23 +17,20 @@ const NavBar = ({ cartCount }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <a href="product.html" className="nav-link">
-                Comprar
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#terms" className="nav-link">
+              <a href="/" className="nav-link">
                 Termos
               </a>
             </li>
             <li className="nav-item">
-              <a href="#about" className="nav-link">
+              <a href="/" className="nav-link">
                 Sobre
               </a>
             </li>
-            {/* <Link to="/myorders" className="nav-link">
-              Pedidos
-            </Link> */}
+            <li className="nav-item">
+              <Link to="/myorders" className="nav-link">
+                Pedidos
+              </Link>
+            </li>
           </ul>
 
           <div className="icons d-flex">

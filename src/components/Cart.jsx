@@ -1,9 +1,11 @@
-import "../styles/cart.css";
-import { Link } from "react-router-dom";
+import '../styles/cart.css';
+import { Link } from 'react-router-dom';
 
 const Cart = ({ items, order, changeQuantity, removeItem }) => {
   return (
     <div className="container cart">
+      <h3>{!items.length ? 'Seu Carrinho está vazio' : null}</h3>
+
       <table>
         {order.items.length ? (
           <tr>
@@ -39,7 +41,6 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
           </tr>
         ))}
       </table>
-
       {order.items.length ? (
         <div className="total-price">
           <table>
@@ -50,7 +51,7 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
             <tr>
               <td>Disconto ({order.discount_in_percent}%)</td>
               <td>
-                R${" "}
+                R${' '}
                 {((order.total_cost * order.discount_in_percent) / 100).toFixed(
                   2
                 )}
@@ -59,7 +60,7 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
             <tr>
               <td>Total</td>
               <td>
-                R${" "}
+                R${' '}
                 {(
                   order.total_cost -
                   (order.total_cost * order.discount_in_percent) / 100
