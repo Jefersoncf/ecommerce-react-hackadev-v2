@@ -19,6 +19,7 @@ form {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: baseline;
   z-index: 1;
 }
 
@@ -31,12 +32,14 @@ form span {
   z-index: 0;
 }
 
-form input {
+.top input {
   border-top: 0;
   border-left: 0;
   border-right: 0;
   height: 40px;
   padding: 5px;
+  font-style: italic;
+  width: 300px;
 }
 
 @media only screen and (max-width: 768px) {
