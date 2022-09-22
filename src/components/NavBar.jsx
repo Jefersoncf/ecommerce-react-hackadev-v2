@@ -32,12 +32,6 @@ const NavBar = ({ cartCount, setInclude }) => {
           </ul>
 
           <div className="icons d-flex">
-            <a href="login.html" className="icon">
-              <i className="bx bx-user"></i>
-            </a>
-            <div className="icon">
-              <i className="bx bx-search"></i>
-            </div>
             <div className="icon">
               <i className="bx bx-heart"></i>
               <span className="d-flex">0</span>
