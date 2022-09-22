@@ -1,15 +1,13 @@
 import '../styles/navbar.css';
 import { Link } from 'react-router-dom';
+import NavInput from './NavInput';
 
 const NavBar = ({ cartCount }) => {
   return (
-    <nav>
+    <header>
+      <NavInput />
       <div className="navigation">
         <div className="nav-center container d-flex">
-          <Link to="/" className="logo">
-            <h1>DevModas</h1>
-          </Link>
-
           <ul className="nav-list d-flex">
             <li className="nav-item">
               <Link to="/" className="nav-link">
@@ -55,7 +53,7 @@ const NavBar = ({ cartCount }) => {
           </div>
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 

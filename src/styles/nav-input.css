@@ -1,0 +1,62 @@
+.header {
+  background-color: #ccc;
+  height: 72px;
+  padding: 0px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-image,
+.user-image img {
+  width: 38px;
+  height: 38px;
+}
+
+.search-bar {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.search-bar form {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+}
+.search-bar button {
+  padding: 0px 8px;
+  font-size: 20px;
+  cursor: pointer;
+  height: 38px;
+}
+.search-bar input {
+  font-size: 18px;
+  width: 100%;
+  padding: 5px 5px 5px 10px;
+  height: 38px;
+  outline: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .search-bar {
+    width: 80%;
+    margin-left: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .search-bar {
+    width: 90%;
+    margin-left: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .search-bar {
+    width: 100%;
+    margin-left: auto;
+  }
+  .search-bar form {
+    width: 90%;
+  }
+}
