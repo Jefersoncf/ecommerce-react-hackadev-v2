@@ -2,10 +2,10 @@ import '../styles/navbar.css';
 import { Link } from 'react-router-dom';
 import NavInput from './NavInput';
 
-const NavBar = ({ cartCount }) => {
+const NavBar = ({ cartCount, setInclude }) => {
   return (
     <header>
-      <NavInput />
+      <NavInput setInclude={setInclude} />
       <div className="navigation">
         <div className="nav-center container d-flex">
           <ul className="nav-list d-flex">
