@@ -25,6 +25,12 @@ const Home = () => {
           .normalize('NFD')
           .replace(/[\u0300-\u036f]/g, '')
           .includes(include.toLocaleLowerCase())
+          ||
+          product.name
+          .toLocaleLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .includes(include.toLocaleLowerCase())
       );
       setProductList(filter);
     } else {
