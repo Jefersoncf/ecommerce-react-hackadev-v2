@@ -4,7 +4,6 @@ const ProductList = ({ products, addToCart }) => {
     <section className="section all-products" id="products">
       <div className="top container">
         <h1>Todos os Produtos</h1>
-        <input type="textarea" placeholder='Search product...'></input>
         <form>
           <select>
             <option value="1">Default Sorting</option>
