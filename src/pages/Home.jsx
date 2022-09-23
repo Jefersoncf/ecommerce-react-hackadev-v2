@@ -26,7 +26,7 @@ const Home = () => {
           .replace(/[\u0300-\u036f]/g, '')
           .includes(include.toLocaleLowerCase())
           ||
-          product.name
+          product.category
           .toLocaleLowerCase()
           .normalize('NFD')
           .replace(/[\u0300-\u036f]/g, '')
