@@ -2,7 +2,7 @@ const db = {
   products: [
     {
       id: 1,
-      name: 'VESTIDO COM MANGAS BUFANTES',
+      name: 'VESTIDO FLORIDO',
       category: 'ROUPAS',
       rating: 4,
       color: 'floral',
@@ -18,11 +18,11 @@ const db = {
     },
     {
       id: 2,
-      name: 'MOLETOM FORRADO',
-      category: 'ROUPAS',
+      name: 'MOCHILA NOTEBOOK',
+      category: 'ACESSÓRIOS',
       rating: 4,
-      color: 'branco',
-      size: 'G',
+      color: 'vermelho',
+      size: '',
       price: 518.7,
       percent: 50,
       details: {
@@ -34,11 +34,11 @@ const db = {
     },
     {
       id: 3,
-      name: 'BOLSA COM ZIPPER',
-      category: 'ACESSÓRIOS',
+      name: 'CAMISA PRETA',
+      category: 'ROUPAS',
       rating: 4,
-      color: 'vermelha',
-      size: '',
+      color: 'preta',
+      size: 'M',
       price: 220.0,
       percent: 0,
       details: {
@@ -50,11 +50,11 @@ const db = {
     },
     {
       id: 4,
-      name: 'CAMISA ARAMIS',
-      category: 'ROUPAS',
+      name: 'TENIS ESPORTIVO',
+      category: 'CALÇADOS',
       rating: 4,
-      color: 'branca',
-      size: 'M',
+      color: 'preto',
+      size: '40',
       price: 199.9,
       percent: 50,
       details: {
@@ -82,12 +82,12 @@ const db = {
     },
     {
       id: 6,
-      name: 'TÊNIS FEMININO HRX',
-      category: 'CALÇADOS',
+      name: 'VESTIDO MANGAS BUFANTES',
+      category: 'ROUPAS',
       rating: 4,
-      color: 'cinza grafite',
+      color: 'rosa',
       price: 520.5,
-      size: '',
+      size: 'M',
       percent: 0,
       details: {
         product: '',
@@ -98,12 +98,12 @@ const db = {
     },
     {
       id: 7,
-      name: 'VESTIDO TRANSPASSE',
-      category: 'ROUPAS',
+      name: 'TENIS CORRIDA',
+      category: 'CALÇADOS',
       rating: 4,
-      color: 'rosa chiclete',
+      color: 'preto',
       price: 258.9,
-      size: 'S',
+      size: '42',
       percent: 50,
       details: {
         product: '',
@@ -114,12 +114,12 @@ const db = {
     },
     {
       id: 8,
-      name: 'TÊNIS MASCULINO SPORT',
-      category: 'CALÇADOS',
+      name: 'CAMISA SOCIAL',
+      category: 'ROUPAS',
       rating: 4,
       color: 'preto',
       price: 599.9,
-      size: '',
+      size: 'M',
       percent: 0,
       details: {
         product: '',
@@ -130,12 +130,12 @@ const db = {
     },
     {
       id: 9,
-      name: 'TÊNIS MASCULINO SPORT',
-      category: 'CALÇADOS',
+      name: 'CAMISA SPORT FINO',
+      category: 'ROUPAS',
       rating: 4,
       color: 'preto',
       price: 599.9,
-      size: '',
+      size: 'M',
       percent: 0,
       details: {
         product: '',
