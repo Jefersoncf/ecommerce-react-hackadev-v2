@@ -1,6 +1,15 @@
 /* Cart Items */
 .cart {
-  margin: 10rem auto;
+  margin: 7rem auto;
+}
+.cardempty {
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
+#imgcardempty {
+  width:35%;
 }
 
 table {
