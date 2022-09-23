@@ -1,10 +1,10 @@
 import NavBar from '../components/NavBar';
-import Slider from '../components/Slider/Slider'
+import Slider from '../components/Slider/Slider';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductList from '../components/ProductList';
 import Footer from '../components/Footer';
 import { ADD_TO_CART } from '../actions';
-
+import { useEffect, useState } from 'react';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -14,13 +14,35 @@ const Home = () => {
   const addToCart = (product) => {
     dispatch({ type: ADD_TO_CART, payload: product });
   };
+
+  const [productList, setProductList] = useState(products);
+  const [include, setInclude] = useState('');
+  useEffect(() => {
+    if (include) {
+      const filter = products.filter((product) =>
+        product.name
+          .toLocaleLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .includes(include.toLocaleLowerCase())
+          ||
+          product.category
+          .toLocaleLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .includes(include.toLocaleLowerCase())
+      );
+      setProductList(filter);
+    } else {
+      setProductList(products);
+    }
+  }, [include, products]);
   return (
     <>
-    
-      <NavBar cartCount={cartItems.length}></NavBar>
-      <Slider></Slider>
-      <ProductList products={products} addToCart={addToCart}></ProductList>
-      
+      <NavBar cartCount={cartItems.length} setInclude={setInclude}></NavBar>
+      <Slider />
+      <ProductList products={productList} addToCart={addToCart}></ProductList>
+
       <Footer></Footer>
     </>
   );

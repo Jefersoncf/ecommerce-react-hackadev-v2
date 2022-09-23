@@ -2,54 +2,78 @@ import {
   ADD_TO_CART,
   CHANGE_ORDER_CART,
   CHANGE_QUANTITY,
+  ADD_ADDRESS,
+  SET_SHIP_ADDRESS,
+  PLACE_ORDER,
   EMPTY_CART,
   REMOVE_ITEM,
+  INIT_PRODUCTS,
 } from '../actions';
 
 const initialStateProducts = {
   products: [
     {
       id: 1,
-      name: 'VESTIDO COM MANGAS BUFANTES',
+      name: 'VESTIDO FLORIDO',
       category: 'ROUPAS',
-      rating: 4,
-      colors: 'floral/preto',
+      rating: 3,
+      color: 'floral',
       price: 249.0,
       size: 'M',
       percent: 0,
+      details: {
+        product: '',
+        warranty: '',
+        merchant: '',
+      },
       image: 'product1',
     },
     {
       id: 2,
-      name: 'MOLETOM FORRADO',
-      category: 'ROUPAS',
-      rating: 4,
-      colors: 'branco/azul marinho',
-      size: 'G',
+      name: 'MOCHILA NOTEBOOK',
+      category: 'ACESSÓRIOS',
+      rating: 5,
+      color: 'vermelho',
+      size: '',
       price: 518.7,
       percent: 50,
+      details: {
+        product: '',
+        warranty: '',
+        merchant: '',
+      },
       image: 'product2',
     },
     {
       id: 3,
-      name: 'BOLSA COM ZIPPER',
-      category: 'ACESSÓRIOS',
+      name: 'CAMISA PRETA',
+      category: 'ROUPAS',
       rating: 4,
-      colors: 'vermelha/preta',
-      size: '',
+      color: 'preta',
+      size: 'M',
       price: 220.0,
       percent: 0,
+      details: {
+        product: '',
+        warranty: '',
+        merchant: '',
+      },
       image: 'product3',
     },
     {
       id: 4,
-      name: 'CAMISA ARAMIS',
-      category: 'ROUPAS',
+      name: 'TENIS ESPORTIVO',
+      category: 'CALÇADOS',
       rating: 4,
-      colors: 'branca/vermelha/preta',
-      size: 'M',
+      color: 'preto',
+      size: '40',
       price: 199.9,
-      percent: 50,
+      percent: 10,
+      details: {
+        product: '',
+        warranty: '',
+        merchant: '',
+      },
       image: 'product4',
     },
     {
@@ -57,54 +81,79 @@ const initialStateProducts = {
       name: 'MOLETOM COM CAPUZ',
       category: 'ROUPAS',
       rating: 4,
-      colors: 'preto',
+      color: 'preto',
       size: 'G',
       price: 255.8,
       percent: 0,
+      details: {
+        product: '',
+        warranty: '',
+        merchant: '',
+      },
       image: 'product5',
     },
     {
       id: 6,
-      name: 'TÊNIS FEMININO HRX',
-      category: 'CALÇADOS',
-      rating: 4,
-      colors: 'cinza grafite/azul marinho',
+      name: 'VESTIDO MANGAS BUFANTES',
+      category: 'ROUPAS',
+      rating: 5,
+      color: 'rosa',
       price: 520.5,
-      size: '',
+      size: 'M',
       percent: 0,
+      details: {
+        product: '',
+        warranty: '',
+        merchant: '',
+      },
       image: 'product6',
     },
     {
       id: 7,
-      name: 'VESTIDO TRANSPASSE',
-      category: 'ROUPAS',
+      name: 'TENIS CORRIDA',
+      category: 'CALÇADOS',
       rating: 4,
-      colors: 'rosa chiclete',
+      color: 'preto',
       price: 258.9,
-      size: 'S',
-      percent: 50,
+      size: '42',
+      percent: 5,
+      details: {
+        product: '',
+        warranty: '',
+        merchant: '',
+      },
       image: 'product7',
     },
     {
       id: 8,
-      name: 'TÊNIS MASCULINO SPORT',
-      category: 'CALÇADOS',
-      rating: 4,
-      colors: 'preto/cinza',
+      name: 'CAMISA SOCIAL',
+      category: 'ROUPAS',
+      rating: 1,
+      color: 'preto',
       price: 599.9,
-      size: '',
+      size: 'M',
       percent: 0,
+      details: {
+        product: '',
+        warranty: '',
+        merchant: '',
+      },
       image: 'product8',
     },
     {
       id: 9,
-      name: 'TÊNIS MASCULINO SPORT',
-      category: 'CALÇADOS',
+      name: 'CAMISA SPORT FINO',
+      category: 'ROUPAS',
       rating: 4,
-      colors: 'preto/cinza',
+      color: 'preto',
       price: 599.9,
-      size: '',
+      size: 'M',
       percent: 0,
+      details: {
+        product: '',
+        warranty: '',
+        merchant: '',
+      },
       image: 'product9',
     },
   ],
@@ -122,8 +171,30 @@ const initialStateOrder = {
   total_cost: 0,
 };
 
+const initialStateUser = {
+  name: 'Jeferson Ferreira',
+  email: 'jeferson@email.com',
+  addresses: [
+    {
+      full_name: ' Jeferson Ferreira',
+      address: 'Av São Paulo',
+      number: 585,
+      city: 'San Francisco',
+      state: 'Goiás',
+      pin_code: '75254-741',
+      phone: '(62) 96670-2437',
+    },
+  ],
+  orders: [],
+};
+
 const productReducer = (state = initialStateProducts, action) => {
-  return state;
+  switch (action.type) {
+    case INIT_PRODUCTS:
+      return { ...state, products: action.payload };
+    default:
+      return state;
+  }
 };
 
 const cartReducer = (state = initialStateCart, action) => {
@@ -146,7 +217,7 @@ const cartReducer = (state = initialStateCart, action) => {
       return { ...state, items: newItems };
     case REMOVE_ITEM:
       const item = action.payload;
-      const i = state.items.findIndex((it) => it._id === item._id);
+      const i = state.items.findIndex((it) => it.id === item.id);
       const itemsArray = [...state.items];
       itemsArray.splice(i, 1);
       return { ...state, items: itemsArray };
@@ -165,15 +236,27 @@ const orderReducer = (state = initialStateOrder, action) => {
         (total, item) => total + item.quantity * 1,
         0
       );
-
       const total_cost = items.reduce(
         (total, item) => total + item.price * item.quantity,
         0
       );
-
       return { ...state, items: action.payload, total_items, total_cost };
+    case SET_SHIP_ADDRESS:
+      return { ...state, shipping_address: action.payload };
     default:
       return state;
   }
 };
-export { productReducer, cartReducer, orderReducer };
+
+const userReducer = (state = initialStateUser, action) => {
+  switch (action.type) {
+    case ADD_ADDRESS:
+      return { ...state, addresses: [...state.addresses, action.payload] };
+    case PLACE_ORDER:
+      return { ...state, orders: [...state.orders, action.payload] };
+
+    default:
+      return state;
+  }
+};
+export { productReducer, cartReducer, orderReducer, userReducer };

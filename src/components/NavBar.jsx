@@ -1,15 +1,13 @@
 import '../styles/navbar.css';
 import { Link } from 'react-router-dom';
+import NavInput from './NavInput';
 
-const NavBar = ({ cartCount }) => {
+const NavBar = ({ cartCount, setInclude }) => {
   return (
-    <nav>
+    <header>
+      <NavInput setInclude={setInclude} />
       <div className="navigation">
         <div className="nav-center container d-flex">
-          <Link to="/" className="logo">
-            <h1>DevModas</h1>
-          </Link>
-
           <ul className="nav-list d-flex">
             <li className="nav-item">
               <Link to="/" className="nav-link">
@@ -17,32 +15,23 @@ const NavBar = ({ cartCount }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <a href="product.html" className="nav-link">
-                Comprar
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#terms" className="nav-link">
+              <a href="/" className="nav-link">
                 Termos
               </a>
             </li>
             <li className="nav-item">
-              <a href="#about" className="nav-link">
+              <a href="/" className="nav-link">
                 Sobre
               </a>
             </li>
-            {/* <Link to="/myorders" className="nav-link">
-              Pedidos
-            </Link> */}
+            <li className="nav-item">
+              <Link to="/myorders" className="nav-link">
+                Pedidos
+              </Link>
+            </li>
           </ul>
 
           <div className="icons d-flex">
-            <a href="login.html" className="icon">
-              <i className="bx bx-user"></i>
-            </a>
-            <div className="icon">
-              <i className="bx bx-search"></i>
-            </div>
             <div className="icon">
               <i className="bx bx-heart"></i>
               <span className="d-flex">0</span>
@@ -58,7 +47,7 @@ const NavBar = ({ cartCount }) => {
           </div>
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 

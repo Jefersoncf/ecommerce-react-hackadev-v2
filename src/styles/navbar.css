@@ -16,7 +16,9 @@
 .nav-center {
   justify-content: space-between;
 }
-
+.nav-list {
+  margin-left: 24%;
+}
 .nav-list .icons {
   display: none;
 }
@@ -67,6 +69,11 @@
   width: 2rem;
   justify-content: center;
 }
+@media only screen and (max-width: 1200px) {
+  .nav-list {
+    margin-left: auto;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   .nav-list {
@@ -82,6 +89,8 @@
     max-width: 35rem;
     z-index: 100;
     transition: all 300ms ease-in-out;
+
+    margin-left: auto;
   }
 
   .nav-list.open {

@@ -1,19 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { configureStore } from '@reduxjs/toolkit';
+import {
+  cartReducer,
+  productReducer,
+  orderReducer,
+  userReducer,
+} from './reducers/index';
+import { Provider } from 'react-redux';
+
 import './index.css';
 import App from './App';
 import Home from './pages/Home';
 import CartPage from './pages/CartPage';
-import { configureStore } from '@reduxjs/toolkit';
-import { Provider } from 'react-redux';
-import { cartReducer, productReducer, orderReducer } from './reducers/index';
+import CheckoutPage from './pages/CheckoutPage';
+import OrdersPage from './pages/OrdersPage';
 
 const store = configureStore({
   reducer: {
     product: productReducer,
     cart: cartReducer,
     order: orderReducer,
+    user: userReducer,
   },
 });
 
@@ -26,6 +35,8 @@ root.render(
           <Route path="/" element={<App />}>
             <Route index element={<Home />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/myorders" element={<OrdersPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
