@@ -17,7 +17,7 @@
   justify-content: space-between;
 }
 .nav-list {
-  margin-left: 24%;
+  margin: auto;
 }
 .nav-list .icons {
   display: none;
@@ -71,7 +71,7 @@
 }
 @media only screen and (max-width: 1200px) {
   .nav-list {
-    margin-left: auto;
+    margin: auto;
   }
 }
 
