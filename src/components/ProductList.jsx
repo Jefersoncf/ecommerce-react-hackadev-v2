@@ -1,66 +1,54 @@
 import { useState } from 'react';
 import '../styles/product-list.css';
 const ProductList = ({ products, addToCart }) => {
-
-  const [productsList, setProductList] = useState(products)
+  const [productsList, setProductList] = useState(products);
 
   const handleOrderList = () => {
-    let newProducts = [...products]
+    let newProducts = [...products];
 
-    let selectOption = document.getElementById("selectBox");
+    let selectOption = document.getElementById('selectBox');
     let selectedValue = selectOption.options[selectOption.selectedIndex].value;
 
     if (selectedValue === '2') {
-      newProducts.sort((a,b) => {
+      newProducts.sort((a, b) => {
         if (a.price > b.price) {
-          return 1
-        }
-        else {
+          return 1;
+        } else {
           if (a.price < b.price) {
             return -1;
-          }
-          else {
+          } else {
             return 0;
           }
         }
-      })
-    }
-
-    else if (selectedValue === '3') {
-      newProducts.sort((a,b) => {
+      });
+    } else if (selectedValue === '3') {
+      newProducts.sort((a, b) => {
         if (a.percent < b.percent) {
-          return 1
-        }
-        else {
+          return 1;
+        } else {
           if (a.percent > b.percent) {
             return -1;
-          }
-          else {
+          } else {
             return 0;
           }
         }
-      })
-    }
-
-    else if (selectedValue === '4') {
-      newProducts.sort((a,b) => {
+      });
+    } else if (selectedValue === '4') {
+      newProducts.sort((a, b) => {
         if (a.rating < b.rating) {
-          return 1
-        }
-        else {
+          return 1;
+        } else {
           if (a.rating > b.rating) {
             return -1;
-          }
-          else {
+          } else {
             return 0;
           }
         }
-      })
+      });
     }
-    
 
-    setProductList(newProducts)
-  }
+    setProductList(newProducts);
+  };
 
   return (
     <section className="section all-products" id="products">
@@ -80,7 +68,7 @@ const ProductList = ({ products, addToCart }) => {
       </div>
       <div className="product-center container">
         {productsList.map((product) => (
-          <div className="product-item">
+          <div key={product.id} className="product-item">
             <div className="overlay">
               <a href="/" className="product-thumb">
                 <img
@@ -88,16 +76,27 @@ const ProductList = ({ products, addToCart }) => {
                   alt="Imagem do produto"
                 />
               </a>
-              <span className="discount"
-                    style={!product.percent ? { display: "none" } : undefined}>{`-${product.percent}%`}</span>
+              <span
+                className="discount"
+                style={!product.percent ? { display: 'none' } : undefined}
+              >{`-${product.percent}%`}</span>
             </div>
             <div className="product-info">
+              <span>{product.category}</span>
               <div className="product-stars">
-                <i className="bx bx-star"></i>
-                <span>{product.category}</span>
+                {[...Array(4)].map(() => (
+                  <i className="bx bxs-star"></i>
+                ))}
+                <i className="bx bxs-star-half"></i>
               </div>
               <a href="/">{product.name}</a>
-              <h4>R$ {product.price}</h4>
+              <h4>
+                {' '}
+                {product.price.toLocaleString('pt-br', {
+                  style: 'currency',
+                  currency: 'BRL',
+                })}
+              </h4>
             </div>
             <ul className="icons">
               <li>

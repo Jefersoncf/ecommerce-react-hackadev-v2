@@ -1,11 +1,11 @@
 .container-slider {
   max-width: 95%;
-  height: 390px;
+  height: 590px;
   margin: 15px auto 20px;
   position: relative;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  cursor:pointer;
+  cursor: pointer;
 }
 @media screen and (max-width: 700px) {
   .container-slider {

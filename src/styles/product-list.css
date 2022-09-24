@@ -73,8 +73,8 @@
 }
 
 .product-stars i {
-  margin-right: 15px;
-  color: black;
+  margin-right: 0.3rem;
+  color: yellow;
 }
 .product-stars span {
   margin-left: 15px;
@@ -171,10 +171,10 @@
   transition: 300ms ease-out;
 }
 
-.product-item:hover .overlay::after {
+/* .product-item:hover .overlay::after {
   visibility: visible;
   opacity: 1;
-}
+} */
 
 .product-item:hover .product-thumb img {
   transform: scale(1.1);

@@ -1,15 +1,16 @@
 import '../styles/cart.css';
 import { Link } from 'react-router-dom';
 
-
 const Cart = ({ items, order, changeQuantity, removeItem }) => {
   return (
     <div className="container cart">
-      <h3>{!items.length ? (
-          <div className='cardempty'>
-            <img src="/images/empty-cart.png" alt="" id='imgcardempty'/>
+      <h3>
+        {!items.length ? (
+          <div className="cardempty">
+            <img src="/images/empty-cart.png" alt="" id="imgcardempty" />
           </div>
-      ): null}</h3>
+        ) : null}
+      </h3>
 
       <table>
         {order.items.length ? (
