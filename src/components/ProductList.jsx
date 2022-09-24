@@ -84,10 +84,9 @@ const ProductList = ({ products, addToCart }) => {
             <div className="product-info">
               <span>{product.category}</span>
               <div className="product-stars">
-                {[...Array(4)].map(() => (
+                {[...Array(product.rating)].map(() => (
                   <i className="bx bxs-star"></i>
                 ))}
-                <i className="bx bxs-star-half"></i>
               </div>
               <a href="/">{product.name}</a>
               <h4>
