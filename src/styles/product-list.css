@@ -15,7 +15,7 @@
   outline: none;
 }
 
-form {
+.form {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@ form {
   z-index: 1;
 }
 
-form span {
+.form .span {
   position: absolute;
   top: 50%;
   right: 1rem;
