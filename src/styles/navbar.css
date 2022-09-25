@@ -2,23 +2,21 @@
   height: 6rem;
   line-height: 6rem;
 }
+
 .container {
   max-width: 114rem;
   margin: 0 auto;
   padding: 0 3rem;
 }
 
-.d-flex {
-  display: flex;
-  align-items: center;
-}
-
 .nav-center {
   justify-content: space-between;
 }
+
 .nav-list {
   margin: auto;
 }
+
 .nav-list .icons {
   display: none;
 }
@@ -36,39 +34,7 @@
   color: var(--green);
 }
 
-.nav-center .hamburger {
-  display: none;
-  font-size: 2.3rem;
-  color: var(--black);
-  cursor: pointer;
-}
 
-/* Icons */
-
-.icon {
-  cursor: pointer;
-  font-size: 2.5rem;
-  padding: 0 1rem;
-  color: #555;
-  position: relative;
-}
-
-.icon:not(:last-child) {
-  margin-right: 0.5rem;
-}
-
-.icon span {
-  position: absolute;
-  top: 3px;
-  right: -3px;
-  background-color: var(--green);
-  color: var(--white);
-  border-radius: 50%;
-  font-size: 1.3rem;
-  height: 2rem;
-  width: 2rem;
-  justify-content: center;
-}
 @media only screen and (max-width: 1200px) {
   .nav-list {
     margin: auto;
@@ -106,12 +72,6 @@
   .nav-list .nav-link {
     font-size: 2rem;
     color: var(--black);
-  }
-
-  .nav-center .hamburger {
-    display: block;
-    color: var(--black);
-    font-size: 3rem;
   }
 
   .icons {
