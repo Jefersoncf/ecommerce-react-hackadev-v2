@@ -11,7 +11,9 @@ const Login = () => {
           <form className="login-form">
             <span className="login-form-title">Bem Vindo(a)!</span>
             <span className="login-form-title">
-              <img src='../images/logo.jpeg' alt="DevModas" />
+              <a href="/">
+                <img src='../images/logo.jpeg' alt="DevModas" />
+              </a>
             </span>
             <div className="wrap-input">
               <input
@@ -39,7 +41,7 @@ const Login = () => {
 
             <div className="text-center">
               <span className="txt1">Não possui conta?</span>
-              <a className="txt2" href=".">
+              <a className="txt2" href="/register">
                 Criar conta.
               </a>
             </div>

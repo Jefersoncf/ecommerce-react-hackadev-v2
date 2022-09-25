@@ -59,7 +59,9 @@ const Register = () => {
           >
             <span className="login-form-title">Bem Vindo(a)!</span>
             <span className="login-form-title">
-              <img src="../images/logo.jpeg" alt="icone" />
+              <a href="/">
+                <img src="../images/logo.jpeg" alt="icone" />
+              </a>
             </span>
 
             {/*quando o formulário for enviado*/}
@@ -142,7 +144,7 @@ const Register = () => {
             </div>
             <div className="text-center">
               <span className="txt1">Já possui conta?</span>
-              <a className="txt2" href=".">
+              <a className="txt2" href="/login">
                 Login.
               </a>
             </div>
