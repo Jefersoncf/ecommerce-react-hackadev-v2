@@ -9,7 +9,6 @@ import { useEffect, useState } from 'react';
 const Home = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.product.products);
-  const cartItems = useSelector((state) => state.cart.items);
 
   const addToCart = (product) => {
     dispatch({ type: ADD_TO_CART, payload: product });
@@ -39,7 +38,7 @@ const Home = () => {
   }, [include, products]);
   return (
     <>
-      <NavBar cartCount={cartItems.length} setInclude={setInclude}></NavBar>
+      <NavBar setInclude={setInclude}></NavBar>
       <Slider />
       <ProductList products={productList} addToCart={addToCart}></ProductList>
 

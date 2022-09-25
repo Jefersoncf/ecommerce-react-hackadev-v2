@@ -1,11 +1,14 @@
 import '../styles/navbar.css';
 import { Link } from 'react-router-dom';
 import NavInput from './NavInput';
+import { useSelector } from 'react-redux';
 
-const NavBar = ({ cartCount, setInclude }) => {
+const NavBar = ({ setInclude }) => {
+
+  const cartItems = useSelector((state) => state.cart.items);
   return (
     <header>
-      <NavInput setInclude={setInclude} />
+      <NavInput cartCount={cartItems.length} setInclude={setInclude} />
       <div className="navigation">
         <div className="nav-center container d-flex">
           <ul className="nav-list d-flex">
@@ -30,21 +33,6 @@ const NavBar = ({ cartCount, setInclude }) => {
               </Link>
             </li>
           </ul>
-
-          <div className="icons d-flex">
-            <div className="icon">
-              <i className="bx bx-heart"></i>
-              <span className="d-flex">0</span>
-            </div>
-            <Link to="/cart" className="icon">
-              <i className="bx bx-cart"></i>
-              <span className="d-flex"> {cartCount}</span>
-            </Link>
-          </div>
-
-          <div className="hamburger">
-            <i className="bx bx-menu-alt-left"></i>
-          </div>
         </div>
       </div>
     </header>

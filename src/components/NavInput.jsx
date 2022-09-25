@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/nav-input.css';
 
-const NavInput = ({ setInclude }) => {
+const NavInput = ({ cartCount, setInclude }) => {
   const route = useLocation();
   const [inputText, setInputText] = useState('');
-  console.log(route);
 
   useEffect(() => {
     if (!inputText) {
@@ -27,7 +26,7 @@ const NavInput = ({ setInclude }) => {
       <div
         className="search-bar"
         style={route.pathname === '/' ? { display: 'flex' } : undefined}
-      >
+        >
         <input
           type="text"
           onChange={(e) => setInputText(e.target.value)}
@@ -38,8 +37,23 @@ const NavInput = ({ setInclude }) => {
           <i className="bx bx-search"></i>
         </button>
       </div>
-      <div className="user-image">
-        <img src="./images/user.png" alt="user" />
+      <div className="icons d-flex">
+        <div className="icon">
+          <i className="bx bx-heart"></i>
+          <span className="d-flex">0</span>
+        </div>
+        <Link to="/cart" className="icon">
+          <i className="bx bx-cart"></i>
+          <span className="d-flex">{cartCount}</span>
+        </Link>
+        <div className="user-image">
+          <a href="/login" class="icon">
+            <i class="bx bx-user"></i>
+          </a>
+      </div>
+      </div>
+      <div className="hamburger">
+        <i className="bx bx-menu-alt-left"></i>
       </div>
     </div>
   );

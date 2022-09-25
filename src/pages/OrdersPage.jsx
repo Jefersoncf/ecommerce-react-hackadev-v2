@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import Navbar from '../components/NavBar';
+import NavInput from '../components/NavInput';
 import Footer from '../components/Footer';
 import Orders from '../components/Orders';
 
@@ -10,7 +10,7 @@ const OrdersPage = () => {
 
   return (
     <>
-      <Navbar cartCount={cartItems.length}></Navbar>
+      <NavInput cartCount={cartItems.length}></NavInput>
       {/* <h2>Meus Pedidos</h2> */}
       {user.orders.map((order) => (
         <Orders items={order.items} order={order}></Orders>
