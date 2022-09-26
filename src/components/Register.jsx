@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import "../styles/login.css";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import '../styles/login.css';
 
 const Register = () => {
-  const [name, setName] = useState("");
-  const [CPF, setCPF] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confPassword, setConfPassword] = useState("");
+  const [name, setName] = useState('');
+  const [CPF, setCPF] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confPassword, setConfPassword] = useState('');
 
   // função para atualizar status do nome no form
   const handleChange = (e) => {
@@ -32,7 +33,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     if (password !== confPassword) {
       // se a senha não forem iguais
-      alert("As senhas digitadas não são iguais");
+      alert('As senhas digitadas não são iguais');
     } else {
       // mostrar alerta com os dados cadastrados
       alert(
@@ -59,9 +60,9 @@ const Register = () => {
           >
             <span className="login-form-title">Bem Vindo(a)!</span>
             <span className="login-form-title">
-              <a href="/">
+              <Link to="/">
                 <img src="../images/logo.jpeg" alt="icone" />
-              </a>
+              </Link>
             </span>
 
             {/*quando o formulário for enviado*/}
@@ -69,7 +70,7 @@ const Register = () => {
 
             <div className="wrap-input">
               <input
-                className={name !== "" ? "has-val input" : "input"}
+                className={name !== '' ? 'has-val input' : 'input'}
                 type="text"
                 value={name}
                 required
@@ -81,9 +82,8 @@ const Register = () => {
             </div>
 
             <div className="wrap-input">
-
               <input
-                className={CPF !== "" ? "has-val input" : "input"}
+                className={CPF !== '' ? 'has-val input' : 'input'}
                 type="text"
                 value={CPF}
                 required
@@ -95,9 +95,8 @@ const Register = () => {
             </div>
 
             <div className="wrap-input">
-
               <input
-                className={email !== "" ? "has-val input" : "input"}
+                className={email !== '' ? 'has-val input' : 'input'}
                 type="email"
                 value={email}
                 required
@@ -109,9 +108,8 @@ const Register = () => {
             </div>
 
             <div className="wrap-input">
-
               <input
-                className={password !== "" ? "has-val input" : "input"}
+                className={password !== '' ? 'has-val input' : 'input'}
                 type="password"
                 value={password}
                 required
@@ -123,9 +121,8 @@ const Register = () => {
             </div>
 
             <div className="wrap-input">
-
               <input
-                className={confPassword !== "" ? "has-val input" : "input"}
+                className={confPassword !== '' ? 'has-val input' : 'input'}
                 type="password"
                 value={confPassword}
                 required
@@ -144,9 +141,9 @@ const Register = () => {
             </div>
             <div className="text-center">
               <span className="txt1">Já possui conta?</span>
-              <a className="txt2" href="/login">
+              <Link className="txt2" to="/login">
                 Login.
-              </a>
+              </Link>
             </div>
           </form>
         </div>

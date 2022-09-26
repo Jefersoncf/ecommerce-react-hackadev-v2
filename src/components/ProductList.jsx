@@ -54,19 +54,19 @@ const ProductList = ({ products, addToCart }) => {
     <section className="section all-products" id="products">
       <div className="top container">
         <h1>Todos os Produtos</h1>
-        <form className='form'>
+        <form className="form">
           <select id="selectBox" onChange={handleOrderList}>
             <option value="1">Default Sorting</option>
             <option value="2">Sort By Price</option>
             <option value="3">Sort By Sale</option>
             <option value="4">Sort By Rating</option>
           </select>
-          <span className='form span'>
+          <span className="form span">
             <i className="bx bx-chevron-down"></i>
           </span>
         </form>
       </div>
-      <div className="product-center container">
+      <div className="product-center">
         {productsList.map((product) => (
           <div key={product.id} className="product-item">
             <div className="overlay">

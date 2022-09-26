@@ -1,9 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.container {
+.container-m {
   width: 100%;
   margin: 0 auto;
 }
@@ -68,7 +63,7 @@
   color: #adadad;
 }
 .focus-input::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   bottom: -2px;
@@ -160,4 +155,3 @@
   line-height: 1.5;
   text-decoration: none;
 }
-

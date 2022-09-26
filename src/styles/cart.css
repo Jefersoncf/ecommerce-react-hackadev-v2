@@ -1,15 +1,21 @@
 /* Cart Items */
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
 .cart {
   margin: 7rem auto;
 }
 .cardempty {
-  display:flex;
+  display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
 }
 
 #imgcardempty {
-  width:35%;
+  width: 35%;
 }
 
 table {
