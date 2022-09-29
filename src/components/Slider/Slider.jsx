@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Slider.css';
 import BtnSlider from './BtnSlider';
 import dataSlider from './dataSlider';
 
 export default function Slider() {
   const [slideIndex, setSlideIndex] = useState(1);
+
+  useEffect (() => {
+    setTimeout(() =>{
+     nextSlide();
+   }, 2500);
+ })
 
   const nextSlide = () => {
     if (slideIndex !== dataSlider.length) {
