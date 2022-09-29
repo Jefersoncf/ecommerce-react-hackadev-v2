@@ -1,5 +1,12 @@
+:root {
+  --white: #fff;
+  --black-b: #222;
+  --black-p: #030508;
+  --grey2: #d1d1d1;
+}
+
 .header {
-  background-color: #ccc;
+  background-color: #e2e2e2;
   height: 72px;
   padding: 0px 40px;
   display: flex;
@@ -38,7 +45,7 @@
   cursor: pointer;
   font-size: 2.5rem;
   padding: 0 1rem;
-  color: #555;
+  color: var(--black-b);
   position: relative;
 }
 
@@ -50,7 +57,7 @@
   position: absolute;
   top: 3px;
   right: -3px;
-  background-color: var(--green);
+  background-color: var(--black-p);
   color: var(--white);
   border-radius: 50%;
   font-size: 1.3rem;
@@ -62,7 +69,7 @@
 .hamburger {
   display: none;
   font-size: 2.3rem;
-  color: var(--black);
+  color: var(--black-b);
   cursor: pointer;
 }
 
@@ -82,7 +89,7 @@
   }
   .hamburger {
     display: block;
-    color: var(--black);
+    color: var(--black-b);
     font-size: 3rem;
   }
   .icons {

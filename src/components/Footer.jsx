@@ -8,7 +8,7 @@ const Footer = () => {
           <h4>INFORMAÇÃO</h4>
           <a href="/">Sobre</a>
           <a href="/">Contato</a>
-          <a href="/">`T&C`</a>
+          <a href="/">T&C</a>
           <a href="/">Tipos de envio</a>
         </div>
         <div className="col d-flex">
