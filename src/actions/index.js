@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const CHANGE_ORDER_CART = 'CHANGE_ORDER_CART';
 export const CHANGE_QUANTITY = 'CHANGE_QUANTITY';
@@ -42,6 +44,7 @@ export const setShipAddressAC = (address) => {
 export const placeOrderAC = (order) => {
   return function (dispatch) {
     dispatch({ type: PLACE_ORDER, payload: order });
+    <Link to="/payment" className="payment btn" />
   };
 };
 

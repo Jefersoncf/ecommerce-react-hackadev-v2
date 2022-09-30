@@ -19,6 +19,7 @@ import CheckoutPage from './pages/CheckoutPage';
 import OrdersPage from './pages/OrdersPage';
 import Login from './components/Login';
 import Register from './components/Register';
+import PaymentPage from './pages/PaymentPage';
 
 const store = configureStore({
   reducer: {
@@ -43,6 +44,7 @@ root.render(
             <Route path="/myorders" element={<OrdersPage />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/payment" element={<PaymentPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
