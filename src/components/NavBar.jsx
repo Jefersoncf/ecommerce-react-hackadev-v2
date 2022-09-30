@@ -23,9 +23,11 @@ const NavBar = ({ setInclude }) => {
               </a>
             </li>
             <li className="nav-item">
-              <a href="/" className="nav-link">
+              
+              <Link to="/about" className="nav-link">
                 Sobre
-              </a>
+              </Link>
+              
             </li>
             <li className="nav-item">
               <Link to="/myorders" className="nav-link">

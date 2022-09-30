@@ -13,6 +13,7 @@ import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
 import Home from './pages/Home';
+import AboutPage from './pages/AboutPage';
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
 import OrdersPage from './pages/OrdersPage';
@@ -37,6 +38,7 @@ root.render(
           <Route path="/" element={<App />}>
             <Route index element={<Home />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/myorders" element={<OrdersPage />} />
             <Route path="/register" element={<Register />} />
