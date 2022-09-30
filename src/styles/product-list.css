@@ -105,10 +105,6 @@
   transition: all 300ms ease;
 }
 
-.product-info a:hover {
-  font-size: 1.6rem;
-}
-
 .product-item .icons {
   position: absolute;
   left: 50%;

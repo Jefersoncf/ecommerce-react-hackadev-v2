@@ -49,7 +49,7 @@ footer .row {
   font-size: 1.6rem;
 }
 
-.bx:hover {
+.footer .bx:hover {
   cursor: pointer;
   font-size: 3rem;
 }
