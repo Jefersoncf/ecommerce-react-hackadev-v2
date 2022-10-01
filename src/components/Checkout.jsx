@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import '../styles/checkout.css';
 
-const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
-  const total =
-    order.total_cost -
-    (order.total_cost * order.discount_in_percent) / 100 +
-    order.shipping_charge;
+const Checkout = ({ user, addAddress, setShipAddress, placeOrder }) => {
+  
 
   const blanck_address = {
     full_name: '',
@@ -165,59 +162,7 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
               </div>
             </div>
             <hr />
-            <div className="sec-cart">
-              <h3 className="title">Seu Carrinho</h3>
-              <div className="content-cart">
-                <div className="box-cart">
-                  <strong> Quantidade de Itens:{order.total_items}</strong>
-
-                  <p>
-                    Valor Bruto
-                    {order.total_cost.toLocaleString('pt-br', {
-                      style: 'currency',
-                      currency: 'BRL',
-                    })}
-                  </p>
-
-                  <p>
-                    Serviços
-                    {order.shipping_charge}
-                  </p>
-
-                  <p>
-                    Descontos{' '}
-                    {(
-                      (order.total_cost * order.discount_in_percent) /
-                      100
-                    ).toLocaleString('pt-br', {
-                      style: 'currency',
-                      currency: 'BRL',
-                    })}
-                  </p>
-
-                  <strong>
-                    Total:
-                    {total.toLocaleString('pt-br', {
-                      style: 'currency',
-                      currency: 'BRL',
-                    })}
-                  </strong>
-                </div>
-                {order.shipping_address ? (
-                  <div className="sec-adress">
-                    <div className="address">
-                      <p>{order.shipping_address.full_name}</p>
-                      <p>
-                        {order.shipping_address.address},{' '}
-                        {order.shipping_address.number},{' '}
-                        {order.shipping_address.pin_code},{' '}
-                        {order.shipping_address.city},{' '}
-                        {order.shipping_address.state}
-                      </p>
-                      <p>{order.shipping_address.phone}</p>
-                    </div>
-                  </div>
-                ) : null}
+            
                 <div className="inputBox">
                   <button
                     formaction="/"
@@ -225,13 +170,12 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
                     type="submit"
                     onClick={(e) => placeOrder()}
                   >
-                    Finalizar pedido
+                    Pagamento
                   </button>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+
       </form>
     </section>
   );

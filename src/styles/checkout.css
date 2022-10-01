@@ -45,9 +45,7 @@
 /* .tel {
   width: 50%;
 } */
-.sec-cart {
-  margin-top: 40px;
-}
+
 .check-end input {
   margin: 30px 10px 0 0;
 }
@@ -62,32 +60,12 @@
 }
 
 /* jjjj */
-.content-cart {
-  padding-bottom: 1rem;
-}
-.box-cart {
-  padding: 1rem 0.5rem;
-  border: 1px solid #ccc;
-  width: 70%;
-}
-.box-cart hr {
-  margin-bottom: 0.5rem;
-}
 
-.box-cart p,
-strong {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 0.5rem;
-}
 
 .container-new-address {
   padding: 1rem 0;
 }
-.container-payment {
-  padding: 1rem 0;
-  margin-bottom: 2rem;
-}
+
 
 .container-checkout form .row-checkout .col-checkout .inputBox input {
   width: 100%;

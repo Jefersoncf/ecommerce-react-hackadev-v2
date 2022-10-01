@@ -1,0 +1,61 @@
+.container-payment {
+    height: 75vh;
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.payment-content {
+    width: 50%;
+    height: 90%;
+}
+
+.payment-options input{
+    margin-left: 50px;
+    margin-right: 10px;
+    margin-top: 50px;
+}
+
+.flex p:nth-child(1){
+    margin-top: 30px;
+}
+
+.flex input{
+    margin-bottom: 10px;
+    width: 60%;
+    height: 30px;
+    padding: 5px;
+}
+
+.sec-cart {
+    width: 40%;
+    height: 90%;
+}
+
+.content-cart {
+    padding-bottom: 1rem;
+    margin-top: 30px;
+}
+
+.box-cart {
+    padding: 1rem 0.5rem;
+    border: 1px solid #ccc;
+}
+
+.box-cart hr {
+    margin-bottom: 0.5rem;
+}
+  
+.box-cart p,
+  strong {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+}
+
+#card-payment {
+    display: none;
+}

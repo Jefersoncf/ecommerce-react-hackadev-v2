@@ -36,7 +36,6 @@ const CheckoutPage = () => {
     <>
       <NavInput cartCount={cartItems.length}></NavInput>
       <Checkout
-        order={order}
         user={user}
         addAddress={addAddress}
         setShipAddress={setShipAddress}

@@ -6,12 +6,15 @@ import { useSelector } from 'react-redux';
 const PaymentPage = () => {
     
     const cartItems = useSelector((state) => state.cart.items);
+    const order = useSelector((state) => state.order);
 
     return (
         <>
             <NavInput cartCount={cartItems.length}></NavInput>
 
-            <Payment />
+            <Payment
+                order={order}
+            />
 
             <Footer></Footer>
         </>
