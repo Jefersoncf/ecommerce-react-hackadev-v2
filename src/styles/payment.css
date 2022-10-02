@@ -1,5 +1,5 @@
 .container-payment {
-    height: 75vh;
+    height: 89vh;
     width: 80vw;
     margin: auto;
     display: flex;
@@ -10,7 +10,7 @@
 
 .payment-content {
     width: 50%;
-    height: 90%;
+    height: 100%;
 }
 
 .payment-options input{
@@ -25,19 +25,21 @@
 
 .flex input{
     margin-bottom: 10px;
-    width: 60%;
+    width: 40%;
     height: 30px;
-    padding: 5px;
+    padding: 3px;
 }
 
 .sec-cart {
     width: 40%;
     height: 90%;
+    
 }
 
 .content-cart {
-    padding-bottom: 1rem;
     margin-top: 30px;
+    background-color: #f5f5f5 ;
+   
 }
 
 .box-cart {
@@ -53,9 +55,30 @@
   strong {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 0.5rem;
-}
+    margin: 7px;
+    
+  }
 
+.box-cart strong {
+    font-size: 20px;
+
+}
 #card-payment {
     display: none;
 }
+
+.inputBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4px;
+}
+
+.inputBox button {
+    height: 50px;
+    width: 20%;
+    
+}
+
+
+
