@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="row">
         <div className="col d-flex">
           <h4>INFORMAÇÃO</h4>
-          <Link to="/">Sobre</Link>
+          <Link to="/about">Sobre</Link>
           <Link to="/">Contato</Link>
           <Link to="/">T&C</Link>
           <Link to="/">Tipos de envio</Link>
