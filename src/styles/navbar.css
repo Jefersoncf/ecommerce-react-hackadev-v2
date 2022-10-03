@@ -36,10 +36,13 @@
   padding: 1rem;
 }
 
-.nav-center .nav-link:hover {
+/* .nav-center .nav-link:hover {
   font-size: 1.9rem;
+} */
+.nav-center .nav-link:hover {
+  color: var(--black-p);
+  text-decoration: underline;
 }
-
 
 @media only screen and (max-width: 1200px) {
   .nav-list {
