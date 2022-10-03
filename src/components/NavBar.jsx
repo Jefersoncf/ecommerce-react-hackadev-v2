@@ -4,7 +4,6 @@ import NavInput from './NavInput';
 import { useSelector } from 'react-redux';
 
 const NavBar = ({ setInclude }) => {
-
   const cartItems = useSelector((state) => state.cart.items);
   return (
     <header>
@@ -23,11 +22,14 @@ const NavBar = ({ setInclude }) => {
               </a>
             </li>
             <li className="nav-item">
-              
               <Link to="/about" className="nav-link">
                 Sobre
               </Link>
-              
+            </li>
+            <li className="nav-item">
+              <Link to="/" className="nav-link">
+                Contato
+              </Link>
             </li>
             <li className="nav-item">
               <Link to="/myorders" className="nav-link">

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../styles/footer.css';
 
 const Footer = () => {
@@ -6,17 +7,17 @@ const Footer = () => {
       <div className="row">
         <div className="col d-flex">
           <h4>INFORMAÇÃO</h4>
-          <a href="/">Sobre</a>
-          <a href="/">Contato</a>
-          <a href="/">T&C</a>
-          <a href="/">Tipos de envio</a>
+          <Link to="/">Sobre</Link>
+          <Link to="/">Contato</Link>
+          <Link to="/">T&C</Link>
+          <Link to="/">Tipos de envio</Link>
         </div>
         <div className="col d-flex">
           <h4>LINKS ÚTEIS</h4>
-          <a href="/">Loja online</a>
-          <a href="/">Atendimento ao cliente</a>
-          <a href="/">Promoções</a>
-          <a href="/">Marcas</a>
+          <Link to="/">Loja online</Link>
+          <Link to="/">Atendimento ao cliente</Link>
+          <Link to="/">Promoções</Link>
+          <Link to="/">Marcas</Link>
         </div>
         <div className="col d-flex">
           <span>

@@ -1,34 +1,36 @@
 :root {
-  --white: #fff;
-  --black: #222;
   --green: #6cbe02;
   --grey1: #f0f0f0;
   --grey2: #e9d7d3;
+
+  --white: #fff;
+  --black-b: #222;
+  --black-p: #030508;
 }
-  
-  *,
-  *::before,
-  *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-  }
-  html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-  }
-  body {
-    font-family: "Open Sans", sans-serif;
-    font-size: 1.6rem;
-    background-color: var(--white);
-    color: var(--black-b);
-    font-weight: 400;
-    font-style: normal;
-  }
-  a {
-    text-decoration: none;
-    color: var(--black-b);
-  }
-  li {
-    list-style: none;
-  }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  background-color: var(--white);
+  color: var(--black-b);
+  font-weight: 400;
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+  color: var(--black-b);
+}
+li {
+  list-style: none;
+}

@@ -172,17 +172,17 @@ const initialStateOrder = {
 };
 
 const initialStateUser = {
-  name: 'Jeferson Ferreira',
-  email: 'jeferson@email.com',
+  name: 'José da Silva',
+  email: 'jose_silva@email.com',
   addresses: [
     {
-      full_name: ' Jeferson Ferreira',
-      address: 'Av São Paulo',
+      full_name: ' José da Silva',
+      address: 'Av T63',
       number: 585,
-      city: 'San Francisco',
-      state: 'Goiás',
+      city: 'Goiânia',
+      state: 'GO',
       pin_code: '75254-741',
-      phone: '(62) 96670-2437',
+      phone: '(62) 97990-1117',
     },
   ],
   orders: [],

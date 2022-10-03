@@ -1,9 +1,3 @@
-:root {
-  --white: #fff;
-  --black-p: #030508;
-  --grey2: #d1d1d1;
-}
-
 /* Footer */
 .footer {
   padding: 7rem 1rem;
@@ -45,13 +39,9 @@ footer .row {
   margin-bottom: 1rem;
 }
 
-.footer .col a:hover {
-  font-size: 1.6rem;
-}
-
 .footer .bx:hover {
   cursor: pointer;
-  font-size: 3rem;
+  color: #a8adb5;
 }
 
 @media only screen and (max-width: 567px) {

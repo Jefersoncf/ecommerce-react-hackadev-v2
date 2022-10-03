@@ -2,8 +2,6 @@ import { useState } from 'react';
 import '../styles/checkout.css';
 
 const Checkout = ({ user, addAddress, setShipAddress, placeOrder }) => {
-  
-
   const blanck_address = {
     full_name: '',
     address: '',
@@ -70,7 +68,7 @@ const Checkout = ({ user, addAddress, setShipAddress, placeOrder }) => {
               <h3 className="title">Adicionar novo Endereço</h3>
 
               <div className="inputBox">
-                <p>Nome Completo :</p>
+                <p>Nome Completo</p>
                 <input
                   type="text"
                   placeholder="Ex: José da Silva"
@@ -82,7 +80,7 @@ const Checkout = ({ user, addAddress, setShipAddress, placeOrder }) => {
               </div>
 
               <div className="inputBox tel">
-                <p>Telefone :</p>
+                <p>Telefone</p>
                 <input
                   type="text"
                   placeholder="Ex: (62) 98765-4326"
@@ -94,7 +92,7 @@ const Checkout = ({ user, addAddress, setShipAddress, placeOrder }) => {
               </div>
 
               <div className="inputBox">
-                <p>Endereço :</p>
+                <p>Endereço</p>
                 <input
                   type="text"
                   placeholder="Ex: Av: Goiás"
@@ -106,7 +104,7 @@ const Checkout = ({ user, addAddress, setShipAddress, placeOrder }) => {
               </div>
               <div className="flex">
                 <div className="inputBox">
-                  <p>Numero :</p>
+                  <p>Numero</p>
                   <input
                     type="number"
                     placeholder="Ex: 456"
@@ -117,7 +115,7 @@ const Checkout = ({ user, addAddress, setShipAddress, placeOrder }) => {
                   />
                 </div>
                 <div className="inputBox">
-                  <p>Cidade :</p>
+                  <p>Cidade</p>
                   <input
                     type="text"
                     placeholder="Ex: Goiânia"
@@ -131,7 +129,7 @@ const Checkout = ({ user, addAddress, setShipAddress, placeOrder }) => {
 
               <div className="flex">
                 <div className="inputBox">
-                  <p>UF :</p>
+                  <p>UF</p>
                   <input
                     type="text"
                     placeholder="Ex: GO"
@@ -142,7 +140,7 @@ const Checkout = ({ user, addAddress, setShipAddress, placeOrder }) => {
                   />
                 </div>
                 <div className="inputBox">
-                  <p>CEP :</p>
+                  <p>CEP</p>
                   <input
                     type="text"
                     placeholder="Ex: 12345-678"
@@ -162,20 +160,19 @@ const Checkout = ({ user, addAddress, setShipAddress, placeOrder }) => {
               </div>
             </div>
             <hr />
-            
-                <div className="inputBox">
-                  <button
-                    formaction="/"
-                    className="btn-address btn"
-                    type="submit"
-                    onClick={(e) => placeOrder()}
-                  >
-                    Pagamento
-                  </button>
-                </div>
-              </div>
-            </div>
 
+            <div className="inputBox">
+              <button
+                formaction="/"
+                className="btn-address btn"
+                type="submit"
+                onClick={(e) => placeOrder()}
+              >
+                Pagamento
+              </button>
+            </div>
+          </div>
+        </div>
       </form>
     </section>
   );

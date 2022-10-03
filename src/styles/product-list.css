@@ -1,9 +1,3 @@
-:root {
-  --white: #fff;
-  --black-b: #222;
-  --black-p: #030508;
-}
-
 /* All Products */
 .section .top {
   display: flex;
@@ -172,11 +166,6 @@
   opacity: 0;
   transition: 300ms ease-out;
 }
-
-/* .product-item:hover .overlay::after {
-  visibility: visible;
-  opacity: 1;
-} */
 
 .product-item:hover .product-thumb img {
   transform: scale(1.1);

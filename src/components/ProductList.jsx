@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/product-list.css';
 const ProductList = ({ products, addToCart }) => {
   const [productsList, setProductList] = useState(products);
@@ -70,12 +71,12 @@ const ProductList = ({ products, addToCart }) => {
         {productsList.map((product) => (
           <div key={product.id} className="product-item">
             <div className="overlay">
-              <a href="/" className="product-thumb">
+              <Link to={`/product/${product.id}`} className="product-thumb">
                 <img
                   src={`images/${product.image}.png`}
                   alt="Imagem do produto"
                 />
-              </a>
+              </Link>
               <span
                 className="discount"
                 style={!product.percent ? { display: 'none' } : undefined}

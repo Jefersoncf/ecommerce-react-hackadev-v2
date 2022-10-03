@@ -1,80 +1,61 @@
 .container-m {
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-  
+  width: 100%;
+  margin: 0 auto;
+}
+.container-about {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background-color: var(--white);
+}
+.wrap-about {
+  width: 900px;
+  background-color: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 30px 55px 33px 55px;
+  margin-bottom: 3rem;
+}
+.about-box {
+  display: block;
+  font-size: 20px;
+  color: azure;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.about-box img {
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+}
+.about-text {
+  display: block;
+  font-size: 30px;
+  color: black;
+  line-height: 1.2;
+  text-align: justify;
+}
+
+@media only screen and (max-width: 412px) {
   .container-about {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    background-color: var(--white);
+    margin: 0px;
+    padding: 0px;
   }
-  
-  
   .wrap-about {
-    width: 900px;
-    background-color: var(--white);
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 30px 55px 33px 55px;
-    margin-bottom: 3rem;
-    
+    margin: 0;
+    padding: 0 0 4rem;
   }
-  
-  
-  
-  .about-box {
-    display: block;
-    font-size: 20px;
-    color: azure;
-    line-height: 1.2;
-    text-align: center;
-    margin-bottom: 5rem;
-  }
-  
   .about-box img {
-    width: 400px;
-    height: 300px;
-    overflow:hidden;
-   
+    width: 100%;
+    margin: 20px 5px;
   }
-  
-  
-  
   .about-text {
-    display: block;
-    font-size: 30px;
-    color: black;
-    line-height: 1.2;
-    text-align: justify;
+    padding: 1rem 1.5rem;
+    text-align: center;
   }
-  
-  @media only screen and (max-width: 412px) {
-    .container-about  {
-      margin: 0px;
-      padding: 0px;
-    }
-  
-    .wrap-about {
-      margin: 0;
-      padding: 0 0 4rem;
-  
-    }
-  
-    .about-box img {
-      width: 100%;
-      margin: 20px 5px;
-    }
-  
-    .about-text {
-      padding: 1rem 1.5rem;
-      text-align: center;
-    }
-  
-  }
-  
+}

@@ -26,7 +26,7 @@ const NavInput = ({ cartCount, setInclude }) => {
       <div
         className="search-bar"
         style={route.pathname === '/' ? { display: 'flex' } : undefined}
-        >
+      >
         <input
           type="text"
           onChange={(e) => setInputText(e.target.value)}
@@ -47,10 +47,10 @@ const NavInput = ({ cartCount, setInclude }) => {
           <span className="d-flex">{cartCount}</span>
         </Link>
         <div className="user-image">
-          <a href="/login" class="icon">
-            <i class="bx bx-user"></i>
-          </a>
-      </div>
+          <Link to="/login" class="icon">
+            <i className="bx bx-user"></i>
+          </Link>
+        </div>
       </div>
       <div className="hamburger">
         <i className="bx bx-menu-alt-left"></i>

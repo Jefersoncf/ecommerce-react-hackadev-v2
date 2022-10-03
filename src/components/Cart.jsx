@@ -13,66 +13,77 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
       </h3>
 
       <table>
-        {order.items.length ? (
-          <tr>
-            <th>Produtos</th>
-            <th>Quantidade</th>
-            <th>Subtotal</th>
-          </tr>
-        ) : null}
+        <tbody>
+          {order.items.length ? (
+            <tr>
+              <th>Produtos</th>
+              <th>Quantidade</th>
+              <th>Subtotal</th>
+            </tr>
+          ) : null}
 
-        {items.map((item) => (
-          <tr>
-            <td>
-              <div className="cart-info">
-                <img src={`images/${item.image}.png`} alt="Imagem do produto" />
-                <div>
-                  <p>{item.name}</p>
-                  <span>Preço: R$ {item.price.toFixed(2)}</span> <br />
-                  {/* <p>Quantidade: {item.quantity}</p> */}
-                  <span onClick={() => removeItem(item)} className="btn-remove">
-                    remover
-                  </span>
+          {items.map((item) => (
+            <tr key={item.id}>
+              <td>
+                <div className="cart-info">
+                  <img
+                    src={`images/${item.image}.png`}
+                    alt="Imagem do produto"
+                  />
+                  <div>
+                    <p>{item.name}</p>
+                    <span>Preço: R$ {item.price.toFixed(2)}</span> <br />
+                    {/* <p>Quantidade: {item.quantity}</p> */}
+                    <span
+                      onClick={() => removeItem(item)}
+                      className="btn-remove"
+                    >
+                      remover
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td>
-              <input
-                type="number"
-                value={item.quantity}
-                onChange={(e) => changeQuantity(e.target.value, item)}
-              />
-            </td>
-            <td>R$ {item.quantity * item.price.toFixed(2)}</td>
-          </tr>
-        ))}
+              </td>
+              <td>
+                <input
+                  type="number"
+                  value={item.quantity}
+                  onChange={(e) => changeQuantity(e.target.value, item)}
+                />
+              </td>
+              <td>R$ {item.quantity * item.price.toFixed(2)}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
       {order.items.length ? (
         <div className="total-price">
           <table>
-            <tr>
-              <td>Subtotal</td>
-              <td>R$ {order.total_cost.toFixed(2)}</td>
-            </tr>
-            <tr>
-              <td>Disconto ({order.discount_in_percent}%)</td>
-              <td>
-                R${' '}
-                {((order.total_cost * order.discount_in_percent) / 100).toFixed(
-                  2
-                )}
-              </td>
-            </tr>
-            <tr>
-              <td>Total</td>
-              <td>
-                R${' '}
-                {(
-                  order.total_cost -
-                  (order.total_cost * order.discount_in_percent) / 100
-                ).toFixed(2)}
-              </td>
-            </tr>
+            <tbody>
+              <tr>
+                <td>Subtotal</td>
+                <td>R$ {order.total_cost.toFixed(2)}</td>
+              </tr>
+              <tr>
+                <td>Disconto ({order.discount_in_percent}%)</td>
+                <td>
+                  R${' '}
+                  {(
+                    (order.total_cost * order.discount_in_percent) /
+                    100
+                  ).toFixed(2)}
+                </td>
+              </tr>
+              <tr>
+                <td>Total</td>
+                <td>
+                  R${' '}
+                  {(
+                    order.total_cost -
+                    (order.total_cost * order.discount_in_percent) / 100
+                  ).toFixed(2)}
+                </td>
+              </tr>
+            </tbody>
           </table>
           <Link to="/checkout" className="checkout btn">
             Proceed To Checkout
