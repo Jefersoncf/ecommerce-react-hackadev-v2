@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Footer from '../components/Footer';
-import NavInput from '../components/NavInput';
+import NavBar from '../components/NavBar';
 import Cart from '../components/Cart';
 import {
   changeOrderWithCart,
@@ -28,8 +28,7 @@ const CartPage = () => {
   };
   return (
     <>
-      <NavInput cartCount={cartItems.length}></NavInput>
-
+      <NavBar cartCount={cartItems.length}></NavBar>
       <Cart
         items={cartItems}
         order={order}

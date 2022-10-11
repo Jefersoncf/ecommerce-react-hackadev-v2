@@ -1,4 +1,4 @@
-import NavInput from '../components/NavInput';
+import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { useDispatch, useSelector } from 'react-redux';
 import Checkout from '../components/Checkout';
@@ -34,7 +34,7 @@ const CheckoutPage = () => {
 
   return (
     <>
-      <NavInput cartCount={cartItems.length}></NavInput>
+      <NavBar cartCount={cartItems.length}></NavBar>
       <Checkout
         user={user}
         addAddress={addAddress}

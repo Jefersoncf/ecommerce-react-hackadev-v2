@@ -1,6 +1,6 @@
 import Payment from "../components/Payment"
 import Footer from "../components/Footer"
-import NavInput from "../components/NavInput"
+import NavBar from "../components/NavBar"
 import { useSelector } from 'react-redux';
 
 const PaymentPage = () => {
@@ -10,7 +10,7 @@ const PaymentPage = () => {
 
     return (
         <>
-            <NavInput cartCount={cartItems.length}></NavInput>
+            <NavBar cartCount={cartItems.length}></NavBar>
 
             <Payment
                 order={order}
