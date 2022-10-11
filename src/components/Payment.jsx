@@ -1,3 +1,4 @@
+import React from 'react';
 import '../styles/payment.css';
 
 const PaymentPage = ( { order } ) => {
@@ -35,7 +36,7 @@ const PaymentPage = ( { order } ) => {
                         <p>Nome no cartão:</p>
                         <input type="text" placeholder="José da Silva" required/>
                         <p>N° do cartão:</p>
-                        <input type="number" placeholder="1111-2222-3333-4444" required/>
+                        <input type="number" placeholder="9999 9999 9999 9999" required  />
                         <p>Mês venc.:</p>
                         <input type="number" placeholder="01" required/>
                         <p>Ano venc.:</p>

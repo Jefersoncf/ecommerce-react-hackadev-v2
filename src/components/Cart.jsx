@@ -64,7 +64,7 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
                 <td>R$ {order.total_cost.toFixed(2)}</td>
               </tr>
               <tr>
-                <td>Disconto ({order.discount_in_percent}%)</td>
+                <td>Desconto ({order.discount_in_percent}%)</td>
                 <td>
                   R${' '}
                   {(
@@ -86,7 +86,7 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
             </tbody>
           </table>
           <Link to="/checkout" className="checkout btn">
-            Proceed To Checkout
+            Finalizar compra
           </Link>
         </div>
       ) : null}
