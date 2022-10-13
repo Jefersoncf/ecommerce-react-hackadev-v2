@@ -7,7 +7,7 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
       <h3>
         {!items.length ? (
           <div className="cardempty">
-            <img src="/images/empty-cart.png" alt="" id="imgcardempty" />
+            <img src="/images/empty-cart.png" alt="produto" id="imgcardempty" />
           </div>
         ) : null}
       </h3>
@@ -32,7 +32,14 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
                   />
                   <div>
                     <p>{item.name}</p>
-                    <span>Preço: R$ {item.price.toFixed(2)}</span> <br />
+                    <span>
+                      Preço: R${' '}
+                      {item.price.toLocaleString('pt-br', {
+                        style: 'currency',
+                        currency: 'BRL',
+                      })}
+                    </span>{' '}
+                    <br />
                     {/* <p>Quantidade: {item.quantity}</p> */}
                     <span
                       onClick={() => removeItem(item)}
@@ -46,11 +53,20 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
               <td>
                 <input
                   type="number"
-                  value={item.quantity}
+                  value={
+                    item.quantity < 1
+                      ? item.quantity === removeItem(item)
+                      : item.quantity
+                  }
                   onChange={(e) => changeQuantity(e.target.value, item)}
                 />
               </td>
-              <td>R$ {item.quantity * item.price.toFixed(2)}</td>
+              <td>
+                {(item.quantity * item.price).toLocaleString('pt-br', {
+                  style: 'currency',
+                  currency: 'BRL',
+                })}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -61,26 +77,35 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
             <tbody>
               <tr>
                 <td>Subtotal</td>
-                <td>R$ {order.total_cost.toFixed(2)}</td>
+                <td>
+                  {order.total_cost.toLocaleString('pt-br', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+                </td>
               </tr>
               <tr>
                 <td>Desconto ({order.discount_in_percent}%)</td>
                 <td>
-                  R${' '}
                   {(
                     (order.total_cost * order.discount_in_percent) /
                     100
-                  ).toFixed(2)}
+                  ).toLocaleString('pt-br', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
                 </td>
               </tr>
               <tr>
                 <td>Total</td>
                 <td>
-                  R${' '}
                   {(
                     order.total_cost -
                     (order.total_cost * order.discount_in_percent) / 100
-                  ).toFixed(2)}
+                  ).toLocaleString('pt-br', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
                 </td>
               </tr>
             </tbody>
