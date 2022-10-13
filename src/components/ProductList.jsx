@@ -1,8 +1,16 @@
-import { useState } from 'react';
+import { useState, Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/product-list.css';
-const ProductList = ({ products, addToCart }) => {
-  const [productsList, setProductList] = useState(products);
+import { fetchProducts } from "../actions/index";
+import { connect } from "react-redux";
+
+class ProductList extends Component {
+
+  componentDidMount() {
+    this.props.fetchProducts();
+  }
+
+  /* const [productsList, setProductList] = useState(products);
 
   const handleOrderList = () => {
     let newProducts = [...products];
@@ -50,13 +58,63 @@ const ProductList = ({ products, addToCart }) => {
 
     setProductList(newProducts);
   };
+ */
+  render() {
+
+    const productItems = this.props.products.map((product) => (
+        <div  className="product-item">
+              <div className="overlay">
+                <Link to={`/product/${product.id_product}`} className="product-thumb">
+                  <img
+                    src={`images/product${product.id_product}.png`}
+                    alt="Imagem do produto"
+                  />
+                </Link>
+                <span
+                  className="discount"
+                  style={!product.product_percent ? { display: 'none' } : undefined}
+                >{`-${product.product_percent}%`}</span>
+              </div>
+              <div className="product-info">
+                <span>{product.product_category}</span>
+                <div className="product-stars">
+                  {[...Array(product.product_rating)].map(() => (
+                    <i className="bx bxs-star"></i>
+                  ))}
+                </div>
+                <a href="/">{product.product_name}</a>
+                <h4>
+                  {' '}
+                  {product.product_price.toLocaleString('pt-br', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+                </h4>
+              </div>
+              <ul className="icons">
+                <li>
+                  <i className="bx bx-heart"></i>
+                </li>
+                <li>
+                  <i className="bx bx-search"></i>
+                </li>
+                <li>
+                  <i
+                    className="bx bx-cart"
+                    /* onClick={() => addToCart(product)} */
+                  ></i>
+                </li>
+              </ul>
+        </div>
+    ))
+
 
   return (
     <section className="section all-products" id="products">
       <div className="top container">
         <h1>Todos os Produtos</h1>
         <form className="form">
-          <select id="selectBox" onChange={handleOrderList}>
+          <select id="selectBox" /* onChange={handleOrderList} */>
             <option value="1">Default Sorting</option>
             <option value="2">Sort By Price</option>
             <option value="3">Sort By Sale</option>
@@ -67,56 +125,13 @@ const ProductList = ({ products, addToCart }) => {
           </span>
         </form>
       </div>
-      <div className="product-center">
-        {productsList.map((product) => (
-          <div key={product.id} className="product-item">
-            <div className="overlay">
-              <Link to={`/product/${product.id}`} className="product-thumb">
-                <img
-                  src={`images/${product.image}.png`}
-                  alt="Imagem do produto"
-                />
-              </Link>
-              <span
-                className="discount"
-                style={!product.percent ? { display: 'none' } : undefined}
-              >{`-${product.percent}%`}</span>
-            </div>
-            <div className="product-info">
-              <span>{product.category}</span>
-              <div className="product-stars">
-                {[...Array(product.rating)].map(() => (
-                  <i className="bx bxs-star"></i>
-                ))}
-              </div>
-              <a href="/">{product.name}</a>
-              <h4>
-                {' '}
-                {product.price.toLocaleString('pt-br', {
-                  style: 'currency',
-                  currency: 'BRL',
-                })}
-              </h4>
-            </div>
-            <ul className="icons">
-              <li>
-                <i className="bx bx-heart"></i>
-              </li>
-              <li>
-                <i className="bx bx-search"></i>
-              </li>
-              <li>
-                <i
-                  className="bx bx-cart"
-                  onClick={() => addToCart(product)}
-                ></i>
-              </li>
-            </ul>
-          </div>
-        ))}
-      </div>
+      <div className='product-center'>{productItems}</div>
     </section>
-  );
+  )};
 };
 
-export default ProductList;
+const mapStateToProps = (state) => ({
+  products: state.product.products,
+});
+
+export default connect( mapStateToProps, { fetchProducts })(ProductList);

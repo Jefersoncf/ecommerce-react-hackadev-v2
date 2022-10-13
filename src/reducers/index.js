@@ -10,7 +10,7 @@ import {
   INIT_PRODUCTS,
 } from '../actions';
 
-const initialStateProducts = {
+/* const initialStateProducts = {
   products: [
     {
       id: 1,
@@ -157,7 +157,7 @@ const initialStateProducts = {
       image: 'product9',
     },
   ],
-};
+}; */
 const initialStateCart = {
   items: [],
 };
@@ -188,7 +188,7 @@ const initialStateUser = {
   orders: [],
 };
 
-const productReducer = (state = initialStateProducts, action) => {
+/* const productReducer = (state = initialStateProducts, action) => {
   switch (action.type) {
     case INIT_PRODUCTS:
       return { ...state, products: action.payload };
@@ -196,6 +196,16 @@ const productReducer = (state = initialStateProducts, action) => {
       return state;
   }
 };
+ */
+const initState = { products: [] };
+export const productReducer =  (state = initState, action) => {
+  switch (action.type) {
+    case INIT_PRODUCTS:
+      return { ...state, products: action.payload };
+    default:
+      return state;
+  }
+}
 
 const cartReducer = (state = initialStateCart, action) => {
   switch (action.type) {
@@ -259,4 +269,4 @@ const userReducer = (state = initialStateUser, action) => {
       return state;
   }
 };
-export { productReducer, cartReducer, orderReducer, userReducer };
+export { /* productReducer,  */cartReducer, orderReducer, userReducer };

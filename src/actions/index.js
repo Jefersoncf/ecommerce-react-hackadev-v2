@@ -10,6 +10,19 @@ export const EMPTY_CART = 'EMPTY_CART';
 export const REMOVE_ITEM = 'REMOVE_ITEM';
 export const INIT_PRODUCTS = 'INIT_PRODUCTS';
 
+export const fetchProducts = () => (dispatch) => {
+  fetch("https://api-ecommerce-hackadev.herokuapp.com/product")
+    .then((res) => res.json())
+    .catch((err) =>
+      fetch("")
+        .then((res) => res.json())
+        .then((data) => data.products)
+    )
+    .then((data) => {
+      dispatch({ type: INIT_PRODUCTS, payload: data });
+    });
+};
+
 export const addToCartAC = (product) => {
   //action create
   return function (dispatch) {
