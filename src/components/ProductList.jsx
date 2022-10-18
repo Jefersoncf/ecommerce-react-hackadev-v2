@@ -101,7 +101,7 @@ class ProductList extends Component {
                 <li>
                   <i
                     className="bx bx-cart"
-                    /* onClick={() => addToCart(product)} */
+                    onClick={() => this.props.addToCart(product)}
                   ></i>
                 </li>
               </ul>

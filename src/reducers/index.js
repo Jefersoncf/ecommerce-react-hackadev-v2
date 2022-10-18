@@ -247,7 +247,7 @@ const orderReducer = (state = initialStateOrder, action) => {
         0
       );
       const total_cost = items.reduce(
-        (total, item) => total + item.price * item.quantity,
+        (total, item) => total + item.product_price * item.quantity,
         0
       );
       return { ...state, items: action.payload, total_items, total_cost };

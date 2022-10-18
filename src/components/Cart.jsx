@@ -23,18 +23,18 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
           ) : null}
 
           {items.map((item) => (
-            <tr key={item.id}>
+            <tr key={item.id_product}>
               <td>
                 <div className="cart-info">
                   <img
-                    src={`images/${item.image}.png`}
+                    src={`images/product${item.id_product}.png`}
                     alt="Imagem do produto"
                   />
                   <div>
-                    <p>{item.name}</p>
+                    <p>{item.product_name}</p>
                     <span>
                       Preço: R${' '}
-                      {item.price.toLocaleString('pt-br', {
+                      {item.product_price.toLocaleString('pt-br', {
                         style: 'currency',
                         currency: 'BRL',
                       })}
@@ -62,7 +62,7 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
                 />
               </td>
               <td>
-                {(item.quantity * item.price).toLocaleString('pt-br', {
+                {(item.quantity * item.product_price).toLocaleString('pt-br', {
                   style: 'currency',
                   currency: 'BRL',
                 })}
