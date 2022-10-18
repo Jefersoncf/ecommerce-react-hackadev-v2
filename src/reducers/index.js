@@ -210,7 +210,7 @@ export const productReducer =  (state = initState, action) => {
 const cartReducer = (state = initialStateCart, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-      if (state.items.find((item) => item.id === action.payload.id)) {
+      if (state.items.find((item) => item.id_product === action.payload.id)) {
         return state;
       }
       return {
