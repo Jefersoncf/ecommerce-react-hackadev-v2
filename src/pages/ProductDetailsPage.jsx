@@ -10,7 +10,8 @@ const ProductDetailsPage = () => {
   let { productId } = useParams();
   const cartItems = useSelector((state) => state.cart.items);
   const products = useSelector((state) => state.product.products);
-  const product = products.find((p) => p._id === productId);
+  const product = products.find((p) => p.id_product === 
+  parseInt(productId));
   console.log(productId, products, product);
 
   const addToCart = (product) => {

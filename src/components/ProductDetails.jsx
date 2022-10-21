@@ -7,26 +7,26 @@ const ProductDetails = ({ product, addToCart }) => {
       <div className="details container-b">
         <div className="left image-container">
           <div className="main">
-            <img src={`/images/${product.image}.png`} alt="Imagem do produto" />
+            <img src={`/images/product${product.id_product}.png`} alt="Imagem do produto" />
           </div>
         </div>
         <div className="right">
-          <span>{product.category}</span>
-          <h1>{product.name}</h1>
-          <p className="rating">Avaliações: {product.rating}</p>
+          <span>{product.product_category}</span>
+          <h1>{product.product_name}</h1>
+          <p className="rating">Avaliações: {product.product_rating}</p>
           <div className="price">
-            <p>Preço: {product.price}</p>
+            <p>Preço: {product.product_price}</p>
           </div>
           <form>
             <div>
               <select>
                 <option value="Select Size">Selecione o tamanho</option>
-                <option value={product.size === 'S'} checked>
+                <option value={product.product_size === 'S'} checked>
                   32
                 </option>
-                <option value={product.size === 'M'}>42</option>
-                <option value={product.size === 'G'}>52</option>
-                <option value={product.size === 'XG'}>62</option>
+                <option value={product.product_size === 'M'}>42</option>
+                <option value={product.product_size === 'G'}>52</option>
+                <option value={product.product_size === 'XG'}>62</option>
               </select>
               <span>
                 <i className="bx bx-chevron-down"></i>
