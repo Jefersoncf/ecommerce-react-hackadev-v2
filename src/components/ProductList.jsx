@@ -76,7 +76,7 @@ class ProductList extends Component {
                 >{`-${product.product_percent}%`}</span>
               </div>
               <div className="product-info">
-                <span>{product.product_category}</span>
+                <span>{product.category_name}</span>
                 <div className="product-stars">
                   {[...Array(product.product_rating)].map(() => (
                     <i className="bx bxs-star"></i>

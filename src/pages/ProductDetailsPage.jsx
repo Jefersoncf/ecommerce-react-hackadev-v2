@@ -3,25 +3,25 @@ import Footer from '../components/Footer';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import ProductDetails from '../components/ProductDetails';
-import { addToCartAC } from '../actions';
+import { ADD_TO_CART, CHANGE_QUANTITY } from '../actions';
 
 const ProductDetailsPage = () => {
   const dispatch = useDispatch();
+  const productSelected = []
   let { productId } = useParams();
   const cartItems = useSelector((state) => state.cart.items);
   const products = useSelector((state) => state.product.products);
-  const product = products.find((p) => p.id_product === 
-  parseInt(productId));
-  console.log(productId, products, product);
+  const productFound = [...productSelected, products.find((p) => p.id_product === parseInt(productId))];
+  const product = productFound[0]
 
   const addToCart = (product) => {
-    dispatch(addToCartAC(product));
+    dispatch({ type: ADD_TO_CART, payload: product });
   };
 
   return (
     <>
       <Navbar cartCount={cartItems.length}></Navbar>
-      <ProductDetails product={product} addToCart={addToCart}></ProductDetails>
+      <ProductDetails product={product} addToCart={addToCart} ></ProductDetails>
 
       <Footer></Footer>
     </>

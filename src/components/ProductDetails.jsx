@@ -11,32 +11,39 @@ const ProductDetails = ({ product, addToCart }) => {
           </div>
         </div>
         <div className="right">
-          <span>{product.product_category}</span>
+          <span>{product.category_name}</span>
           <h1>{product.product_name}</h1>
-          <p className="rating">Avaliações: {product.product_rating}</p>
+          <p className="rating">Avaliações: {[...Array(product.product_rating)].map(() => (
+                                                      <i className="bx bxs-star"></i>
+                                            ))}
+          </p>
           <div className="price">
-            <p>Preço: {product.product_price}</p>
+            <p>Preço: {product.product_price.toLocaleString('pt-br', {
+                                            style: 'currency',
+                                            currency: 'BRL',
+                      })}
+            </p>
           </div>
           <form>
+            {product.product_size
+            ?
             <div>
-              <select>
-                <option value="Select Size">Selecione o tamanho</option>
-                <option value={product.product_size === 'S'} checked>
-                  32
-                </option>
-                <option value={product.product_size === 'M'}>42</option>
-                <option value={product.product_size === 'G'}>52</option>
-                <option value={product.product_size === 'XG'}>62</option>
-              </select>
-              <span>
-                <i className="bx bx-chevron-down"></i>
-              </span>
+                {[...Array(product.product_size.length)].map(() => (
+                    <div>{product.size_name}</div>
+                ))}
             </div>
+            : 
+            <div></div>
+            }
+            
           </form>
           <form className="form">
-            <input type="number" value="1" />
-            <Link to="/cart" className="addCart" onClick={addToCart(product)}>
-              Adicionar ao Carrinho
+            <input type="number" value="1"/>
+            <button type="button" className="addCart" onClick={() => addToCart(product)}>
+              Comprar
+            </button>
+            <Link to="/cart" className="addCart">
+              Ver Carrinho
             </Link>
           </form>
           <h3>Detalhes do produto</h3>

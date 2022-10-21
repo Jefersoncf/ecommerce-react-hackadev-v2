@@ -11,7 +11,7 @@ export const REMOVE_ITEM = 'REMOVE_ITEM';
 export const INIT_PRODUCTS = 'INIT_PRODUCTS';
 
 export const fetchProducts = () => (dispatch) => {
-  fetch("https://api-ecommerce-hackadev.herokuapp.com/product")
+  fetch("https://api-ecommerce-hackadev.herokuapp.com/product_all")
     .then((res) => res.json())
     .catch((err) =>
       fetch("")
@@ -20,6 +20,7 @@ export const fetchProducts = () => (dispatch) => {
     )
     .then((data) => {
       dispatch({ type: INIT_PRODUCTS, payload: data });
+      console.log(data)
     });
 };
 
