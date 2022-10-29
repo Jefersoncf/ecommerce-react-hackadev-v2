@@ -1,7 +1,15 @@
-import '../styles/cart.css';
-import { Link } from 'react-router-dom';
+import "../styles/cart.css";
+import { Link } from "react-router-dom";
+// import { useEffect, useState } from "react";
 
 const Cart = ({ items, order, changeQuantity, removeItem }) => {
+  // const [value, setValue] = useState(0);
+  // useEffect(() => {
+  //   if (value < 0) {
+  //     setValue(0);
+  //   }
+  // }, [value]);
+
   return (
     <div className="container cart">
       <h3>
@@ -33,14 +41,13 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
                   <div>
                     <p>{item.product_name}</p>
                     <span>
-                      Preço: R${' '}
-                      {item.product_price.toLocaleString('pt-br', {
-                        style: 'currency',
-                        currency: 'BRL',
+                      Preço:{" "}
+                      {item.product_price.toLocaleString("pt-br", {
+                        style: "currency",
+                        currency: "BRL",
                       })}
-                    </span>{' '}
+                    </span>{" "}
                     <br />
-                    {/* <p>Quantidade: {item.quantity}</p> */}
                     <span
                       onClick={() => removeItem(item)}
                       className="btn-remove"
@@ -58,13 +65,12 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
                       ? item.quantity === removeItem(item)
                       : item.quantity
                   }
-                  onChange={(e) => changeQuantity(e.target.value, item)}
                 />
               </td>
               <td>
-                {(item.quantity * item.product_price).toLocaleString('pt-br', {
-                  style: 'currency',
-                  currency: 'BRL',
+                {(item.quantity * item.product_price).toLocaleString("pt-br", {
+                  style: "currency",
+                  currency: "BRL",
                 })}
               </td>
             </tr>
@@ -78,9 +84,9 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
               <tr>
                 <td>Subtotal</td>
                 <td>
-                  {order.total_cost.toLocaleString('pt-br', {
-                    style: 'currency',
-                    currency: 'BRL',
+                  {order.total_cost.toLocaleString("pt-br", {
+                    style: "currency",
+                    currency: "BRL",
                   })}
                 </td>
               </tr>
@@ -90,9 +96,9 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
                   {(
                     (order.total_cost * order.discount_in_percent) /
                     100
-                  ).toLocaleString('pt-br', {
-                    style: 'currency',
-                    currency: 'BRL',
+                  ).toLocaleString("pt-br", {
+                    style: "currency",
+                    currency: "BRL",
                   })}
                 </td>
               </tr>
@@ -102,9 +108,9 @@ const Cart = ({ items, order, changeQuantity, removeItem }) => {
                   {(
                     order.total_cost -
                     (order.total_cost * order.discount_in_percent) / 100
-                  ).toLocaleString('pt-br', {
-                    style: 'currency',
-                    currency: 'BRL',
+                  ).toLocaleString("pt-br", {
+                    style: "currency",
+                    currency: "BRL",
                   })}
                 </td>
               </tr>
